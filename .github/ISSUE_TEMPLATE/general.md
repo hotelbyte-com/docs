@@ -1,6 +1,6 @@
 ---
 name: General
-about: Describe this issue template's purpose here.
+about: For general questions
 title: ''
 labels: ''
 assignees: Danceiny
