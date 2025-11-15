@@ -1,5 +1,5 @@
 ---
-name: General issue template
+name: General
 about: Describe this issue template's purpose here.
 title: ''
 labels: ''
