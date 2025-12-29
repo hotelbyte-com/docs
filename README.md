@@ -20,6 +20,8 @@
 
 9.	Room mapping requirement:
 
+10. What is your Board(meal info) and Cancellation policy mapping logic, please describe:
+
 
 ## To Suppliers
 
