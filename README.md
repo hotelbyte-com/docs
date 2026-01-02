@@ -59,3 +59,8 @@
 9.	Estimated time to go live:
 
 >Approximately 5 days after certification, to ensure everything is working well internally before opening to clients.
+
+## To Tenants
+
+Please manage your api access requests here: https://ccnubzk8p4sa.feishu.cn/base/Ago1b1yV5aUMb7s67pwcifhCnbb.
+Once we get the portal feature done, you can mange it on our website. Coming soon.
