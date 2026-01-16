@@ -1,0 +1,41 @@
+{
+  "test_date": "2026-01-16 15:03:08",
+  "test_account": "Travel To Discover LLC",
+  "environment": "apici.yalago.com (CI Environment)",
+  "test_cases": [
+    {
+      "name": "Full Flow Certification Test",
+      "hotel_id": "111764",
+      "destination": "",
+      "occupancy": "Multiple rooms supported",
+      "dates": "",
+      "source_market": "",
+      "result": "PASS",
+      "supplier_order_id": "YAC/17601143",
+      "steps": [
+        {
+          "step": "HotelList",
+          "status": "PASS"
+        },
+        {
+          "step": "HotelRates",
+          "status": "PASS"
+        },
+        {
+          "step": "Book",
+          "status": "PASS",
+          "details": "SupplierRef: YAC/17601143"
+        },
+        {
+          "step": "QueryOrder",
+          "status": "PASS"
+        },
+        {
+          "step": "Cancel",
+          "status": "PASS"
+        }
+      ],
+      "timestamp": "2026-01-16T15:03:08.748496+04:00"
+    }
+  ]
+}

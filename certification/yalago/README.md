@@ -4,8 +4,8 @@ This directory contains certification documents for Yalago integration.
 
 ## Files
 
-- `Certification_Guide_Filled.xlsx` - Completed certification questionnaire
-- `certification_summary.json` - Certification test results
+- [Certification_Guide_Filled.xlsx](https://github.com/hotelbyte-com/docs/raw/main/certification/yalago/Certification%20Guide%20Filled.xlsx) - Completed certification questionnaire
+- [certification_summary.json](certification_summary.json) - Certification test results with supplier order ID
 
 ## Certification Summary
 
