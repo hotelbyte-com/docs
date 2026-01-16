@@ -1,17 +1,19 @@
 {
-  "test_date": "2026-01-16 15:03:08",
+  "test_date": "2026-01-16 16:02:58",
   "test_account": "Travel To Discover LLC",
   "environment": "apici.yalago.com (CI Environment)",
   "test_cases": [
     {
       "name": "Full Flow Certification Test",
       "hotel_id": "111764",
-      "destination": "",
-      "occupancy": "Multiple rooms supported",
-      "dates": "",
-      "source_market": "",
+      "hotel_name": "Jumeirah Beach Hotel",
+      "destination": "3507_54634",
+      "occupancy": "2 Adults",
+      "dates": "Feb 15, 2026 to Feb 17, 2026",
+      "source_market": "ES",
       "result": "PASS",
-      "supplier_order_id": "YAC/17601143",
+      "supplier_order_id": "YAC/17601185",
+      "platform_order_id": "1768564972479534000",
       "steps": [
         {
           "step": "HotelList",
@@ -24,7 +26,7 @@
         {
           "step": "Book",
           "status": "PASS",
-          "details": "SupplierRef: YAC/17601143"
+          "details": "SupplierRef: YAC/17601185"
         },
         {
           "step": "QueryOrder",
@@ -35,7 +37,7 @@
           "status": "PASS"
         }
       ],
-      "timestamp": "2026-01-16T15:03:08.748496+04:00"
+      "timestamp": "2026-01-16T16:02:58.315781+04:00"
     }
   ]
 }
