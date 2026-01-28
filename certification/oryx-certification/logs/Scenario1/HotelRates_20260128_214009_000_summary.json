@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-01-28T21:40:09.204325+04:00",
+  "supplier": "Arabian Oryx",
+  "apiName": "HotelRates",
+  "url": "http://uat-apiv2.giinfotech.ae/api/v2/hotel/RoomDetails",
+  "method": "POST",
+  "requestBody": {
+    "SessionId": "023eb89f4bea471ca719c40f19ecabf5",
+    "SearchParameter": {
+      "Rooms": {
+        "Room": [
+          {
+            "RoomIdentifier": 1,
+            "Adult": 2
+          }
+        ]
+      },
+      "HotelCode": "71190",
+      "Currency": "AED"
+    }
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "generalInfo": {
+        "customerCode": null,
+        "sessionId": "023eb89f4bea471ca719c40f19ecabf5",
+        "timeStamp": "2026-01-28T21:40:09Z",
+        "apiKey": "R5LLulyAFEiaS76V9AOgSa=="
+      },
+      "hotel": {
+        "code": "71190",
+        "name": "Nihal Hotel",
+        "roomsCount": 58,
+        "sampleRooms": [
+          {
+            "meal": "ROOM ONLY",
+            "contractType": "O",
+            "roomIdentifier": 1,
+            "adult": 2,
+            "roomCombinationId": 1527111,
+            "shortCode": "ArabianOryx",
+            "roomName": "STANDARD ROOM",
+            "rateType": "Refundable",
+            "status": "Available",
+            "supplierGroupCode": 152,
+            "rateKey": "2124:130:1:284409-0-0-0-0-0#Room-1:2,0_$0O",
+            "groupCode": 175,
+            "price": {
+              "supplierCurrency": "AED",
+              "net": 220,
+              "gross": 220,
+              "tax": 0
+            }
+          }
+        ]
+      }
+    }
+  }
+}
