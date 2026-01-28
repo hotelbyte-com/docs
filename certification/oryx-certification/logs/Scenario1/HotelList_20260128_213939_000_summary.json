@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-01-28T21:39:39.269555+04:00",
+  "supplier": "Arabian Oryx",
+  "apiName": "HotelList",
+  "url": "http://uat-apiv2.giinfotech.ae/api/v2/hotel/Search",
+  "method": "POST",
+  "requestBody": {
+    "SearchParameter": {
+      "Nationality": "AE",
+      "Currency": "AED",
+      "CheckInDate": "2026-02-27T00:00:00",
+      "CheckOutDate": "2026-03-01T00:00:00",
+      "Rooms": {
+        "Room": [
+          {
+            "RoomIdentifier": 1,
+            "Adult": 2
+          }
+        ]
+      },
+      "TassProInfo": {
+        "CustomerCode": "4129",
+        "RegionID": "123"
+      },
+      "DestinationCode": "160-0",
+      "CountryCode": "AE"
+    }
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "generalInfo": {
+        "sessionId": "023eb89f4bea471ca719c40f19ecabf5",
+        "timeStamp": "2026-01-28T21:39:40Z",
+        "apiKey": "R5LLulyAFEiaS76V9AOgSa==",
+        "customerCode": null
+      },
+      "hotelsCount": 679,
+      "sampleHotels": [
+        {
+          "hotelInfo": {
+            "spHotelCode": "319",
+            "lcSupplier": null,
+            "name": "Nihal Hotel",
+            "image": "https://static.giinfotech.ae/medianew/thumbnail/71190/Primaryimage_eb514a57_z.jpg",
+            "description": "",
+            "lat": "25.260165307468",
+            "lon": "55.324518568122",
+            "add2": "",
+            "code": "71190",
+            "lcHotelCode": null,
+            "starRating": "3",
+            "add1": "P.O. Box 14914 Deira , Dubai",
+            "city": "Dubai"
+          },
+          "spHotelCode": null,
+          "name": "Nihal Hotel",
+          "supplierGroupCode": 152,
+          "supplierShortCode": "ArabianOryx",
+          "supplierMinPrice": 220,
+          "minPrice": 220,
+          "rooms": null,
+          "code": "71190",
+          "groupCode": 175,
+          "supplierCurrency": "AED"
+        }
+      ]
+    }
+  }
+}
