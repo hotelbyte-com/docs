@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-01-28T21:53:46.796269+04:00",
+  "supplier": "Arabian Oryx",
+  "apiName": "HotelList",
+  "url": "http://uat-apiv2.giinfotech.ae/api/v2/hotel/Search",
+  "method": "POST",
+  "requestBody": {
+    "SearchParameter": {
+      "DestinationCode": "160-0",
+      "CountryCode": "AE",
+      "Nationality": "AE",
+      "Currency": "AED",
+      "CheckInDate": "2026-02-27T00:00:00",
+      "CheckOutDate": "2026-03-01T00:00:00",
+      "Rooms": {
+        "Room": [
+          {
+            "Adult": 2,
+            "RoomIdentifier": 1
+          }
+        ]
+      },
+      "TassProInfo": {
+        "CustomerCode": "4129",
+        "RegionID": "123"
+      }
+    }
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "generalInfo": {
+        "apiKey": "R5LLulyAFEiaS76V9AOgSa==",
+        "customerCode": null,
+        "sessionId": "04249293e4a84868a3ef0decc96d8ff8",
+        "timeStamp": "2026-01-28T21:53:47Z"
+      },
+      "hotelsCount": null,
+      "sampleHotels": []
+    }
+  }
+}
