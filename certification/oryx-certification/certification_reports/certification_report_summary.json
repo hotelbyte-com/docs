@@ -1,0 +1,16 @@
+{
+  "testName": "Scenario1_SingleRoom",
+  "totalSteps": 6,
+  "passedSteps": 6,
+  "orderInfo": {
+    "currency": "AED",
+    "supplierReferenceNo": "7C50ADEF0",
+    "roomTypeName": "Deluxe Room",
+    "cancelled": true,
+    "platformReferenceNo": "1769622023000",
+    "hotelId": "71190",
+    "checkInDate": "2026-02-27",
+    "checkOutDate": "2026-03-01",
+    "netPrice": 282.83
+  }
+}
