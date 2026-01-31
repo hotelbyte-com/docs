@@ -1,0 +1,1651 @@
+{
+  "timestamp": "2026-02-01T00:32:36+04:00",
+  "scenario": "dida_occupancy",
+  "hotelListReq": {
+    "hotelIds": null,
+    "maxRatesPerHotel": 3,
+    "checkIn": "2026-03-03",
+    "checkOut": "2026-03-05",
+    "countryCode": "",
+    "residencyCode": "",
+    "nationalityCode": "US",
+    "roomOccupancies": [
+      {
+        "adultCount": 3,
+        "childrenAges": null,
+        "guests": null
+      }
+    ],
+    "destinationName": "Dubai",
+    "pageNum": 1,
+    "pageSize": 50,
+    "sortBy": "price-asc",
+    "currency": "USD",
+    "test": "supplier=dida"
+  },
+  "hotelListResp": {
+    "list": [
+      {
+        "id": "1766688424",
+        "destinationId": "5283029650408100",
+        "name": {
+          "en": "Al Maha, a Luxury Collection Desert Resort \u0026 Spa"
+        },
+        "address": {
+          "en": "Al Ain Road; P.O. Box 118887; Dubai Desert Conservation Reserve"
+        },
+        "latlngCoordinator": {
+          "google": {
+            "lat": 24.82193149,
+            "lng": 55.66137314
+          }
+        },
+        "minPrice": {
+          "currency": "USD",
+          "amount": 4269.276
+        },
+        "rooms": [
+          {
+            "roomTypeId": "Bedouin Villa",
+            "roomTypeName": {
+              "en": "Bedouin Villa"
+            },
+            "hotelId": "1766688424",
+            "rates": [
+              {
+                "ratePkgId": "6\u003cHB\u003e1\u003cHB\u003e-7512310342609318687",
+                "originalRoomNaming": {
+                  "id": "-7512310342609318687",
+                  "name": "Bedouin Villa",
+                  "supplier": 6
+                },
+                "rate": {
+                  "netRate": {
+                    "currency": "USD",
+                    "amount": 4269.276
+                  }
+                },
+                "totalRate": {
+                  "netRate": {
+                    "currency": "USD",
+                    "amount": 4269.276
+                  }
+                },
+                "rateComment": "",
+                "board": {
+                  "boardId": "FB",
+                  "boardName": {
+                    "en": "Full Board",
+                    "zh": "全食宿"
+                  },
+                  "boardDesc": {
+                    "en": "Accommodation with breakfast, lunch and dinner included",
+                    "zh": "住宿含早餐、午餐和晚餐"
+                  }
+                },
+                "checkIn": "",
+                "checkOut": ""
+              }
+            ]
+          },
+          {
+            "roomTypeId": "Villa, 1 Bedroom, Private Pool",
+            "roomTypeName": {
+              "en": "Villa, 1 Bedroom, Private Pool"
+            },
+            "hotelId": "1766688424",
+            "rates": [
+              {
+                "ratePkgId": "6\u003cHB\u003e1\u003cHB\u003e-4322989437416420218",
+                "originalRoomNaming": {
+                  "id": "-4322989437416420218",
+                  "name": "Villa, 1 Bedroom, Private Pool",
+                  "supplier": 6
+                },
+                "rate": {
+                  "netRate": {
+                    "currency": "USD",
+                    "amount": 4277.108
+                  }
+                },
+                "totalRate": {
+                  "netRate": {
+                    "currency": "USD",
+                    "amount": 4277.108
+                  }
+                },
+                "rateComment": "",
+                "board": {
+                  "boardId": "FB",
+                  "boardName": {
+                    "en": "Full Board",
+                    "zh": "全食宿"
+                  },
+                  "boardDesc": {
+                    "en": "Accommodation with breakfast, lunch and dinner included",
+                    "zh": "住宿含早餐、午餐和晚餐"
+                  }
+                },
+                "checkIn": "",
+                "checkOut": ""
+              }
+            ]
+          },
+          {
+            "roomTypeId": "Villa, 1 Bedroom, Private Pool",
+            "roomTypeName": {
+              "en": "Villa, 1 Bedroom, Private Pool"
+            },
+            "hotelId": "1766688424",
+            "rates": [
+              {
+                "ratePkgId": "6\u003cHB\u003e1\u003cHB\u003e1536477127384580019",
+                "originalRoomNaming": {
+                  "id": "1536477127384580019",
+                  "name": "Villa, 1 Bedroom, Private Pool",
+                  "supplier": 6
+                },
+                "rate": {
+                  "netRate": {
+                    "currency": "USD",
+                    "amount": 4291.1
+                  }
+                },
+                "totalRate": {
+                  "netRate": {
+                    "currency": "USD",
+                    "amount": 4291.1
+                  }
+                },
+                "rateComment": "",
+                "board": {
+                  "boardId": "FB",
+                  "boardName": {
+                    "en": "Full Board",
+                    "zh": "全食宿"
+                  },
+                  "boardDesc": {
+                    "en": "Accommodation with breakfast, lunch and dinner included",
+                    "zh": "住宿含早餐、午餐和晚餐"
+                  }
+                },
+                "checkIn": "",
+                "checkOut": ""
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "basic": {
+      "sessionId": "42595922391178472"
+    },
+    "header": {}
+  },
+  "hotelRatesReq": {
+    "hotelId": "1766688424",
+    "checkIn": "2026-03-03",
+    "checkOut": "2026-03-05",
+    "countryCode": "",
+    "residencyCode": "",
+    "nationalityCode": "US",
+    "roomOccupancies": [
+      {
+        "adultCount": 3,
+        "childrenAges": null,
+        "guests": null
+      }
+    ],
+    "destinationName": "",
+    "currency": "USD",
+    "sessionId": "42595922391178472",
+    "test": "supplier=dida"
+  },
+  "hotelRatesResp": {
+    "rooms": [
+      {
+        "roomTypeId": "E1",
+        "roomTypeName": {
+          "en": "Economy Room",
+          "zh": "经济房"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eE1-NRF",
+            "refundableMode": "no",
+            "cancelFees": [],
+            "originalRoomNaming": {
+              "id": "E1-NRF",
+              "name": "Non-Refundable",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 50.645369370272945
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 46.041244882066295
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 55.24949385847957
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 44.03945162632431
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 46.041244882066295
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 55.24949385847957
+              }
+            },
+            "rateComment": "Non-refundable rate - No cancellation allowed",
+            "board": {
+              "boardId": "RO",
+              "boardName": {
+                "en": "Room Only",
+                "zh": "仅住宿"
+              },
+              "boardDesc": {
+                "en": "Accommodation only, no meals included",
+                "zh": "仅提供住宿，不含餐食"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 34
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 20
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 10
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 4
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          },
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eE1-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543086Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543086Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "E1-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 58.242174775813886
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 52.94743161437624
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 63.53691793725148
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 50.645369370272945
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 52.94743161437624
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 63.53691793725148
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 39.1
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 23
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 11.5
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 4.6
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      },
+      {
+        "roomTypeId": "E2",
+        "roomTypeName": {
+          "en": "Budget Twin",
+          "zh": "经济双床"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eE2-NRF",
+            "refundableMode": "no",
+            "cancelFees": [],
+            "originalRoomNaming": {
+              "id": "E2-NRF",
+              "name": "Non-Refundable",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 50.645369370272945
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 46.041244882066295
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 55.24949385847957
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 44.03945162632431
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 46.041244882066295
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 55.24949385847957
+              }
+            },
+            "rateComment": "Non-refundable rate - No cancellation allowed",
+            "board": {
+              "boardId": "RO",
+              "boardName": {
+                "en": "Room Only",
+                "zh": "仅住宿"
+              },
+              "boardDesc": {
+                "en": "Accommodation only, no meals included",
+                "zh": "仅提供住宿，不含餐食"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 34
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 20
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 10
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 4
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          },
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eE2-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543091Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543091Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "E2-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 58.242174775813886
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 52.94743161437624
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 63.53691793725148
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 50.645369370272945
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 52.94743161437624
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 63.53691793725148
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 39.1
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 23
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 11.5
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 4.6
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      },
+      {
+        "roomTypeId": "B1",
+        "roomTypeName": {
+          "en": "Executive Room",
+          "zh": "行政房"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eB1-FLEX",
+            "refundableMode": "full",
+            "refundableUntil": "2026-01-31T08:10:38.543043Z",
+            "cancelFees": [
+              {
+                "until": "2026-01-31T08:10:38.543043Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "B1-FLEX",
+              "name": "Flexible Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 122.81502072291185
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 111.6500188390108
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 133.98002260681295
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 106.79567019383641
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 111.6500188390108
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 133.98002260681295
+              }
+            },
+            "rateComment": "Free cancellation until 3 days before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 82.45
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 48.5
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 24.25
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 9.700000000000001
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          },
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eB1-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543037Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543037Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "B1-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 126.61342342568234
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 115.10311220516577
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 110.09862906581073
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 115.10311220516577
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 85
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 50
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 25
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 10
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      },
+      {
+        "roomTypeId": "B2",
+        "roomTypeName": {
+          "en": "Business Suite",
+          "zh": "商务套房"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eB2-FLEX",
+            "refundableMode": "full",
+            "refundableUntil": "2026-01-31T08:10:38.543054Z",
+            "cancelFees": [
+              {
+                "until": "2026-01-31T08:10:38.543054Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "B2-FLEX",
+              "name": "Flexible Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 122.81502072291185
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 111.6500188390108
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 133.98002260681295
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 106.79567019383641
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 111.6500188390108
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 133.98002260681295
+              }
+            },
+            "rateComment": "Free cancellation until 3 days before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 82.45
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 48.5
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 24.25
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 9.700000000000001
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          },
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eB2-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543048Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543048Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "B2-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 126.61342342568234
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 115.10311220516577
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 110.09862906581073
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 115.10311220516577
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 85
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 50
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 25
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 10
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      },
+      {
+        "roomTypeId": "P2",
+        "roomTypeName": {
+          "en": "Luxury Suite",
+          "zh": "豪华套房"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eP2-FLEX",
+            "refundableMode": "full",
+            "refundableUntil": "2026-01-31T08:10:38.543107Z",
+            "cancelFees": [
+              {
+                "until": "2026-01-31T08:10:38.543107Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "P2-FLEX",
+              "name": "Flexible Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 147.37802486749425
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 133.98002260681295
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 160.77602712817554
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 128.1548042326037
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 133.98002260681295
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 160.77602712817554
+              }
+            },
+            "rateComment": "Free cancellation until 3 days before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 98.94000000000001
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 58.2
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 29.1
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 11.64
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          },
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eP2-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543105Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543105Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "P2-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 151.9361081108188
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 165.7484815754387
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 132.11835487897287
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 165.7484815754387
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 102
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 60
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 30
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 12
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      },
+      {
+        "roomTypeId": "P1",
+        "roomTypeName": {
+          "en": "Premium Room",
+          "zh": "高级房"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eP1-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543097Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543097Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "P1-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 151.9361081108188
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 165.7484815754387
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 132.11835487897287
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 138.12373464619893
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 165.7484815754387
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 102
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 60
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 30
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 12
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      },
+      {
+        "roomTypeId": "V1",
+        "roomTypeName": {
+          "en": "Ocean View Room",
+          "zh": "海景房"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eV1-ADVANCE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-01-20T08:10:38.543064Z",
+            "cancelFees": [
+              {
+                "until": "2026-01-20T08:10:38.543064Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "V1-ADVANCE",
+              "name": "Advance Purchase",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 186.3749592826044
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 169.43178116600401
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 203.31813739920474
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 162.06518198487342
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 169.43178116600401
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 203.31813739920474
+              }
+            },
+            "rateComment": "Advance purchase - Free cancellation until 14 days before",
+            "board": {
+              "boardId": "BI",
+              "boardName": {
+                "en": "Breakfast Included",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Breakfast included",
+                "zh": "含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 125.12
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 73.60000000000001
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 36.800000000000004
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 14.72
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          },
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eV1-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543062Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543062Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "V1-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 202.58147748109175
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 184.1649795282652
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 220.99797543391827
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 176.1578065052972
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 184.1649795282652
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 220.99797543391827
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 136
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 80
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 40
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 16
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      },
+      {
+        "roomTypeId": "V2",
+        "roomTypeName": {
+          "en": "Villa Suite",
+          "zh": "别墅套房"
+        },
+        "rates": [
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eV2-FLEX",
+            "refundableMode": "full",
+            "refundableUntil": "2026-01-31T08:10:38.543083Z",
+            "cancelFees": [
+              {
+                "until": "2026-01-31T08:10:38.543083Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "V2-FLEX",
+              "name": "Flexible Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 196.50403315665903
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 178.64003014241726
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 214.36803617090067
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 170.8730723101383
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 178.64003014241726
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 214.36803617090067
+              }
+            },
+            "rateComment": "Free cancellation until 3 days before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 131.92000000000002
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 77.60000000000001
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 38.800000000000004
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 15.52
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          },
+          {
+            "ratePkgId": "10000000\u003cHB\u003e-1\u003cHB\u003eV2-FREE",
+            "refundableMode": "full",
+            "refundableUntil": "2026-02-02T08:10:38.543073Z",
+            "cancelFees": [
+              {
+                "until": "2026-02-02T08:10:38.543073Z"
+              }
+            ],
+            "originalRoomNaming": {
+              "id": "V2-FREE",
+              "name": "Free Cancellation",
+              "supplier": 10000000
+            },
+            "rate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 202.58147748109175
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 184.1649795282652
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 220.99797543391827
+              }
+            },
+            "totalRate": {
+              "commissionableRate": {
+                "currency": "USD",
+                "amount": 176.1578065052972
+              },
+              "netRate": {
+                "currency": "USD",
+                "amount": 184.1649795282652
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 220.99797543391827
+              }
+            },
+            "rateComment": "Free cancellation until 1 day before check-in",
+            "board": {
+              "boardId": "BB",
+              "boardName": {
+                "en": "Bed and Breakfast",
+                "zh": "含早餐"
+              },
+              "boardDesc": {
+                "en": "Accommodation with breakfast included",
+                "zh": "住宿含早餐"
+              }
+            },
+            "tax": {
+              "total": {
+                "currency": "CNY",
+                "amount": 136
+              },
+              "items": [
+                {
+                  "taxType": "VAT",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 80
+                  },
+                  "desc": "Value Added Tax"
+                },
+                {
+                  "taxType": "SERVICE_CHARGE",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 40
+                  },
+                  "desc": "Service Charge"
+                },
+                {
+                  "taxType": "CITY_TAX",
+                  "taxName": "",
+                  "amount": {
+                    "currency": "CNY",
+                    "amount": 16
+                  },
+                  "desc": "City Tax"
+                }
+              ]
+            },
+            "checkIn": "2026-02-08",
+            "checkOut": "2026-02-10"
+          }
+        ]
+      }
+    ],
+    "header": {}
+  }
+}
