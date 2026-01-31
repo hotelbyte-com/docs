@@ -73,8 +73,8 @@ We have captured a **full request/response snapshot** from a successful run (sam
 
 **Latest sample (from re-run):**
 
-- **File**: [dida_occupancy_20260201_003236.json](https://github.com/hotelbyte-com/docs/blob/main/certification/dida/logs/dida_occupancy_20260201_003236.json)  
-- **Raw**: [dida_occupancy_20260201_003236.json (raw)](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/dida/logs/dida_occupancy_20260201_003236.json)
+- **View / download**: [dida_occupancy_20260201_003236.json](https://github.com/hotelbyte-com/docs/blob/main/certification/dida/logs/dida_occupancy_20260201_003236.json) — open this link, then use the **Raw** button on the page to get the raw JSON, or **Download** to save the file.
+- **Path in repo**: `certification/dida/logs/dida_occupancy_20260201_003236.json` (for clone or CI).
 
 **Logs directory**: [certification/dida/logs/](https://github.com/hotelbyte-com/docs/tree/main/certification/dida/logs)
 
@@ -88,6 +88,6 @@ We have captured a **full request/response snapshot** from a successful run (sam
 2. **Root cause (our understanding)**: Cached pricing on your side is limited to default occupancy (1 room, 2 adults, 0 children); other occupancies require real-time pricing.  
 3. **Our fix**: We now use **real-time pricing** (`IsRealTime=true`) for any non-default occupancy in both HotelList and HotelRates flows, so we no longer hit this error.  
 4. **Verification**: We re-ran the E2E with requests forced to Dida via `supplierCredentialIds`; HotelList and HotelRates both succeed for 3 adults, 1 room, Dubai.  
-5. **Logs**: A full request/response sample from the latest run is linked above for your reference.
+5. **Logs**: A full request/response sample from the latest run is linked above (open the link and use **Raw** or **Download** to get the JSON).
 
 If anything in this description does not match your API contract or implementation, we are happy to adjust. Please confirm when convenient.
