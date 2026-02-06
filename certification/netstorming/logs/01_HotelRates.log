@@ -1,0 +1,101 @@
+# HotelRates API Log
+
+**Date**: 2025-10-30 08:23:14
+**Endpoint**: https://test.netstorming.net/kalima/call.php
+**Duration**: 0.75 seconds
+
+---
+
+## REQUEST
+
+### Headers
+```
+Content-Type: text/xml; charset=utf-8
+```
+
+### XML Body
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<envelope>
+    <header>
+        <credential>
+            <actor>ttdbooking</actor>
+            <user>xmluser</user>
+            <password>ttdbookxml</password>
+        </credential>
+        <version>1.7.1</version>
+        <timestamp>20251030082314</timestamp>
+    </header>
+    <query type="availability" product="hotel">
+        <nationality>CN</nationality>
+        <checkin date="2025-11-01"/>
+        <checkout date="2025-11-02"/>
+        <hotels>
+            <hotel id="305592"/>
+        </hotels>
+        <details>
+            <room count="1" occupancy="1"/>
+        </details>
+        <filters>AVAILONLY,AVLHEAVY</filters>
+        <currency>USD</currency>
+        <timeout>20</timeout>
+    </query>
+</envelope>
+```
+
+---
+
+## RESPONSE
+
+### Status
+- **Code**: 200
+- **Product**: hotel/availability
+- **Function**: hotel/availability_single
+
+### XML Body
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<envelope>
+    <header>
+        <version port="4002" host="ns002test.cloud.netstorming.net">1.7.2</version>
+        <timestamp>20251030052315</timestamp>
+    </header>
+    <response type="availability" product="hotel">
+        <search number="11054948" time="0.34"/>
+        <nights number="1"/>
+        <checkin date="2025-11-01"/>
+        <checkout date="2025-11-02"/>
+        <hotels total="1">
+            <hotel code="305592" name="THE CODE HOTEL" stars="4" location="99" address="79 Via Sistina, 00187" promo="false" city="ROM">
+                <agreement id="LCL.10000040" available="true" room_basis="RO" meal_basis="X" ctype="523" c_type="523" room_type="Estate Suite Room" is_dynamic="false" currency="USD" deadline="2025-10-30" total="6102.98" total_gross="6102.98" original_total="6102.98" special="false" is_fully_refundable="false">
+                    <deadline date="2025-10-30 00:00:00" value="2025-10-30 00:00:00"/>
+                    <policies>
+                        <policy from="2025-10-30 00:00:00" percentage="100"/>
+                    </policies>
+                    <deadline_remarks/>
+                    <remarks>
+                        <remark code="SYS_CTYPE_NAME_FOR_CUSTOMER" text="ESTATE SUITE ROOM"/>
+                        <remark code="SYS_CONTRACT_TYPE" text="ESTATE SUITE ROOM"/>
+                    </remarks>
+                    <room type="tsu" required="1" occupancy="1">
+                        <price from="2025-11-01" to="2025-11-02">
+                            <roomprice nett="6102.98" gross="6102.98"/>
+                        </price>
+                    </room>
+                </agreement>
+            </hotel>
+        </hotels>
+    </response>
+</envelope>
+```
+
+### Key Response Data
+- **Search Number**: 11054948
+- **Hotel Code**: 305592
+- **Hotel Name**: THE CODE HOTEL
+- **Agreement ID**: LCL.10000040
+- **Room Type**: Estate Suite Room
+- **Room Basis**: RO (Room Only)
+- **Currency**: USD
+- **Total Price**: $6,102.98
+- **Available**: true
