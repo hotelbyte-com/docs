@@ -8,7 +8,9 @@
 
 ## Executive Summary
 
-HotelByte has successfully completed technical integration testing with Netstorming's hotel booking API. This document provides a comprehensive overview of our testing methodology, test scenarios, and results for certification review.
+HotelByte has completed technical integration testing with Netstorming's hotel booking API. This document provides a comprehensive overview of our testing methodology, test scenarios, and results for certification review.
+
+**Note**: Test credentials (ttdbooking/xmluser) expired after October 30, 2025. Updated credentials are required from Netstorming to complete end-to-end testing.
 
 ---
 
@@ -18,35 +20,37 @@ HotelByte has successfully completed technical integration testing with Netstorm
 
 | Parameter | Value |
 |-----------|-------|
-| Test Environment | http://test.netstorming.net |
+| Test Environment | https://test.netstorming.net/kalima/call.php |
 | Test Actor | ttdbooking |
 | Test User | xmluser |
 | Test Password | ttdbookxml |
+| **Status** | ⚠️ Expired (as of Nov 2025) |
 
 ### 1.2 Test Property
 
 | Field | Value |
 |-------|-------|
 | Hotel ID | 305592 |
-| Location | Available upon request |
+| Hotel Name | THE CODE HOTEL |
+| Location | Rome, Italy |
 | Currency | USD |
 
 ---
 
 ## 2. Test Scenarios
 
-We have completed three comprehensive test scenarios covering common booking patterns:
+We have prepared three comprehensive test scenarios covering common booking patterns:
 
 ### Scenario 1: Single Room Basic Booking
 
 | Parameter | Value |
 |-----------|-------|
-| **Description** | Single room booking with 2 adults |
+| **Description** | Single room booking with 1 adult |
 | **Room Count** | 1 room |
-| **Adults** | 2 |
+| **Adults** | 1 |
 | **Children** | 0 |
 | **Check-in** | T+30 days from today |
-| **Nights** | 2 nights |
+| **Nights** | 1 night |
 | **Currency** | USD |
 
 ### Scenario 2: Multi-Room Multi-Guest Booking
@@ -79,13 +83,13 @@ We have completed three comprehensive test scenarios covering common booking pat
 
 ### 3.1 Endpoints Tested
 
-| Endpoint | Description | Status |
-|----------|-------------|--------|
-| **HotelRates** | Search for available rooms and rates | ✅ Tested |
-| **CheckAvail** | Verify price and availability before booking | ✅ Tested |
-| **Book** | Create a hotel reservation | ✅ Tested |
-| **QueryOrder** | Retrieve booking details | ✅ Tested |
-| **Cancel** | Cancel a booking | ✅ Tested |
+| Endpoint | Description | Status | Notes |
+|----------|-------------|--------|-------|
+| **HotelRates** | Search for available rooms and rates | ✅ Tested | Successful response logged |
+| **CheckAvail** | Verify price and availability before booking | ⚠️ Partial | Session timeout in test logs |
+| **Book** | Create a hotel reservation | ⚠️ Pending | Requires valid credentials |
+| **QueryOrder** | Retrieve booking details | ✅ Tested | Cancelled booking retrieved |
+| **Cancel** | Cancel a booking | ⚠️ Pending | Requires valid credentials |
 
 ### 3.2 Test Flow
 
@@ -95,29 +99,29 @@ For each scenario, we execute the following complete booking flow:
 HotelRates → CheckAvail → Book → QueryOrder → Cancel
 ```
 
-All test bookings are automatically cancelled to prevent any charges.
+All test bookings should be automatically cancelled to prevent any charges.
 
 ---
 
 ## 4. Test Results Summary
 
-### 4.1 Test Execution
+### 4.1 API Response Verification (October 30, 2025)
 
-| Scenario | HotelRates | CheckAvail | Book | QueryOrder | Cancel | Overall |
-|----------|------------|------------|------|------------|--------|--------|
-| Scenario 1 | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass |
-| Scenario 2 | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass |
-| Scenario 3 | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass | ✅ Pass |
+| API | Request Successful | Response Validated |
+|-----|-------------------|-------------------|
+| HotelRates | ✅ Yes | ✅ Yes - Returns available rooms |
+| CheckAvail | ✅ Yes | ⚠️ Session expired |
+| QueryOrder | ✅ Yes | ✅ Yes - Returns booking details |
+| Book | ⚠️ Credentials expired | - |
+| Cancel | ⚠️ Credentials expired | - |
 
-### 4.2 Key Metrics
+### 4.2 Sample Data Captured
 
-| Metric | Value |
-|--------|-------|
-| Total Test Cases | 3 |
-| Total API Calls | 15 (5 per scenario) |
-| Success Rate | 100% |
-| Test Bookings Created | 3 |
-| Test Bookings Cancelled | 3 |
+- **HotelRates Search Number**: 11054948
+- **Sample Agreement ID**: LCL.10000040
+- **Sample Room Type**: Estate Suite Room (tsu)
+- **Sample Price**: $6,102.98 USD/night
+- **Room Basis**: RO (Room Only)
 
 ---
 
@@ -135,58 +139,76 @@ Netstorming meal plan codes are correctly mapped to our standard BoardId system:
 
 ---
 
-## 6. Technical Contact
+## 6. Integration Status
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| API Endpoint Configuration | ✅ Complete | All endpoints configured in config.yaml |
+| XML Request/Response Handling | ✅ Complete | Proper XML serialization/deserialization |
+| Meal Plan Mapping | ✅ Complete | All codes mapped in model/mapping.go |
+| Status Code Mapping | ✅ Complete | CNF/PND/CXL/REJ mapped |
+| Session Management | ✅ Complete | HotelRates parameters stored for CheckAvail |
+| Error Handling | ✅ Complete | Error mappings configured |
+| Currency Handling | ✅ Complete | Dynamic currency from API response |
+
+---
+
+## 7. Technical Implementation Details
+
+### 7.1 File Structure
+
+```
+supplier/integration/netstorming/
+├── config.yaml                    # API endpoint configuration
+├── service.go                     # Supplier client implementation
+├── hotel_rates.go                 # Availability search
+├── check_avail.go                 # Availability verification
+├── book.go                        # Booking creation
+├── query_order.go                 # Order retrieval
+├── cancel.go                      # Booking cancellation
+├── converter.go                   # Data transformation
+├── model/                         # XML data structures
+│   ├── book.go
+│   ├── check_avail.go
+│   ├── hotel_rates.go
+│   ├── query_order.go
+│   ├── cancel.go
+│   └── mapping.go                # Meal plan & status mapping
+└── certification_test.go          # Automated certification tests
+```
+
+### 7.2 Key Features
+
+1. **XML Communication**: Full support for Netstorming's XML-based API
+2. **Dynamic Currency**: Currency code extracted from API response
+3. **Session Management**: Request parameters stored for multi-step booking flow
+4. **Auto-Cleanup**: Test orders automatically cancelled to prevent charges
+5. **Comprehensive Error Mapping**: Supplier errors mapped to business domain errors
+
+---
+
+## 8. Next Steps
+
+1. **Request Updated Test Credentials**: Contact Netstorming for refreshed test account credentials
+2. **Complete E2E Testing**: Run full certification tests with valid credentials
+3. **Production Handover**: Review and approve for production deployment
+
+---
+
+## 9. Technical Contact
 
 For any technical questions or clarification regarding this certification, please contact:
 
 - **Email**: [technical-contact@hotelbyte.com](mailto:technical-contact@hotelbyte.com)
 - **GitHub**: https://github.com/hotelbyte-com/docs
+- **Repository**: https://github.com/hotelbyte-com/hotel-be
 
 ---
 
-## 7. Appendix: Sample API Exchange
+## 10. Appendix: Actual API Logs
 
-### 7.1 HotelRates Request Example
-
-```xml
-<query type="availability" product="hotel">
-    <nationality>CN</nationality>
-    <checkin date="2026-03-08"/>
-    <checkout date="2026-03-10"/>
-    <hotels>
-        <hotel id="305592"/>
-    </hotels>
-    <details>
-        <room count="1" occupancy="2"/>
-    </details>
-    <filters>AVAILONLY,AVLHEAVY</filters>
-    <currency>USD</currency>
-    <timeout>20</timeout>
-</query>
-```
-
-### 7.2 Book Request Example
-
-```xml
-<query type="book" product="hotel" synchronous="true">
-    <nationality>CN</nationality>
-    <checkin date="2026-03-08"/>
-    <checkout date="2026-03-10"/>
-    <hotel code="305592" agreement="[AGREEMENT_ID]"/>
-    <reference code="[PLATFORM_ORDER_ID]"/>
-    <details>
-        <rooms>
-            <room id="1">
-                <pax count="2">
-                    <pax adult="true" surname="Test" initial="T"/>
-                    <pax adult="true" surname="User" initial="U"/>
-                </pax>
-            </room>
-        </rooms>
-    </details>
-</query>
-```
+See [API_EXAMPLES.md](./API_EXAMPLES.md) for complete request/response logs captured during testing.
 
 ---
 
-*This certification document is confidential and intended solely for Netstorming's technical review.*
+*This certification document is intended for Netstorming's technical review and approval.*
