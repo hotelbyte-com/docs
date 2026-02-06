@@ -140,7 +140,7 @@ Verified data from actual API responses:
 - **Hotel**: THE CODE HOTEL (Rome, Italy)
 - **Agreement ID**: LCL.10000040
 - **Room Type**: Estate Suite Room
-- **Search Number**: 11054948
+- **Search Number**: 11688995
 - **Price**: $6,102.98 USD/night
 - **Room Basis**: RO (Room Only)
 
@@ -163,13 +163,13 @@ Complete request/response logs from successful E2E test run (February 6, 2026):
 |-----|----------|-------------|
 | **HotelRates** | [01_HotelRates.json](./logs/01_HotelRates.json) | Search response with hotel details, room types, and pricing |
 | **CheckAvail** | [02_CheckAvail.json](./logs/02_CheckAvail.json) | Availability verification before booking |
-| **Book** | [03_Book.json](./logs/03_Book.json) | Successful booking confirmation (Booking Code: B0226CBWWB) |
+| **Book** | [03_Book.json](./logs/03_Book.json) | Successful booking confirmation (Booking Code: B0226KQD8C) |
 | **Cancel** | [05_Cancel.json](./logs/05_Cancel.json) | Successful cancellation (Status: cxl) |
 
 ### 9.1 Booking Details
 
 From the test run:
-- **Booking Code**: B0226CBWWB
+- **Booking Code**: B0226KQD8C
 - **Status**: Confirmed (cnf) → Cancelled (cxl)
 - **Hotel**: THE CODE HOTEL (305592)
 - **Check-in**: 2026-02-13
