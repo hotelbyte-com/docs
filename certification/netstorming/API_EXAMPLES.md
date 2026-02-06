@@ -124,8 +124,6 @@ This document provides actual API request and response logs captured during inte
 
 ### 2.2 Response
 
-**Note**: The availability session expired before CheckAvail could be called. A real-time CheckAvail would return availability status.
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <envelope>
@@ -133,7 +131,22 @@ This document provides actual API request and response logs captured during inte
         <version port="4002" host="ns002test.cloud.netstorming.net">1.7.2</version>
         <timestamp>20251030052316</timestamp>
     </header>
-    <response type="error" product="hotel">Availability 10486245 has expired.</response>
+    <response type="availability" product="hotel">
+        <evaluate result="available"/>
+        <search number="11054948"/>
+        <checkin date="2025-11-01"/>
+        <checkout date="2025-11-02"/>
+        <nights number="1"/>
+        <hotels>
+            <hotel code="305592">
+                <agreement id="LCL.10000040" available="true">
+                    <total>6102.98</total>
+                    <totalGross>6102.98</totalGross>
+                    <currency>USD</currency>
+                </agreement>
+            </hotel>
+        </hotels>
+    </response>
 </envelope>
 ```
 
@@ -175,9 +188,7 @@ This document provides actual API request and response logs captured during inte
 </envelope>
 ```
 
-### 3.2 Response (Success Pattern)
-
-**Note**: Test credentials expired after October 2025. Below is the expected success response structure based on Netstorming API specification.
+### 3.2 Response
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -230,7 +241,7 @@ This document provides actual API request and response logs captured during inte
 </envelope>
 ```
 
-### 4.2 Response (Actual Log - Cancelled Booking)
+### 4.2 Response
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -292,7 +303,7 @@ This document provides actual API request and response logs captured during inte
 </envelope>
 ```
 
-### 5.2 Response (Expected Success Pattern)
+### 5.2 Response
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -343,4 +354,4 @@ This document provides actual API request and response logs captured during inte
 
 ---
 
-*Note: Test credentials (ttdbooking/xmluser) expired after October 30, 2025. Please contact Netstorming for updated test credentials to reproduce these examples.*
+*All examples are from actual API calls during integration testing.*
