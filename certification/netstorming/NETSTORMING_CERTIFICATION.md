@@ -69,13 +69,13 @@ Three comprehensive test scenarios covering common booking patterns:
 
 ### 3.1 Endpoints Certified
 
-| Endpoint | Description | Status |
-|----------|-------------|--------|
-| **HotelRates** | Search for available rooms and rates | ✅ Certified |
-| **CheckAvail** | Verify price and availability before booking | ✅ Certified |
-| **Book** | Create a hotel reservation | ✅ Certified |
-| **QueryOrder** | Retrieve booking details | ✅ Certified |
-| **Cancel** | Cancel a booking | ✅ Certified |
+| Endpoint | Description | Status | Notes |
+|----------|-------------|--------|-------|
+| **HotelRates** | Search for available rooms and rates | ✅ Certified | Fully functional |
+| **CheckAvail** | Verify price and availability before booking | ✅ Certified | Fully functional |
+| **Book** | Create a hotel reservation | ✅ Certified | Fully functional |
+| **QueryOrder** | Retrieve booking details | ⚠️ Issue | See Section 10 |
+| **Cancel** | Cancel a booking | ✅ Certified | Fully functional |
 
 ### 3.2 Test Flow
 
@@ -180,4 +180,47 @@ From the test run:
 
 ---
 
-*This certification document confirms successful integration with Netstorming's hotel booking API.*
+## 10. Open Issues for Netstorming Review
+
+### 10.1 QueryOrder API Not Responding
+
+**Status**: 🔴 Requires Netstorming Attention
+
+**Issue**: The QueryOrder API endpoint returns error response in the test environment.
+
+**Error Message**:
+```xml
+<response type="error">This operation is not available or the name has been mistyped.</response>
+```
+
+**Request Being Sent**:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<envelope>
+    <header>
+        <credential>
+            <actor>ttdbooking</actor>
+            <user>xmluser</user>
+            <password>ttdbookxml</password>
+        </credential>
+        <version>1.7.1</version>
+        <timestamp>20260206191203</timestamp>
+    </header>
+    <query type="query" product="hotel">
+        <booking code="B0226KQD8C"/>
+    </query>
+</envelope>
+```
+
+**Questions for Netstorming**:
+
+1. Is the QueryOrder API (type="query") still supported in the test environment?
+2. Has the API endpoint or request format changed since October 2025?
+3. Are there additional permissions or configuration required for QueryOrder access?
+4. Is there a delay before newly created bookings can be queried?
+
+**Reference**: This API was successfully queried in October 2025 certification (booking code: B0725EBDLN).
+
+---
+
+*This certification document confirms successful integration with Netstorming's hotel booking API, with one open issue requiring Netstorming's review.*
