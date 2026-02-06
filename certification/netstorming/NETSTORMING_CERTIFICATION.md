@@ -155,9 +155,28 @@ For any technical questions or clarification:
 
 ---
 
-## 9. Appendix: API Examples
+## 9. Appendix: Real API Logs
 
-See [API_EXAMPLES.md](./API_EXAMPLES.md) for complete XML request/response logs.
+Complete request/response logs from successful E2E test run (February 6, 2026):
+
+| API | Log File | Description |
+|-----|----------|-------------|
+| **HotelRates** | [01_HotelRates.json](./logs/01_HotelRates.json) | Search response with hotel details, room types, and pricing |
+| **CheckAvail** | [02_CheckAvail.json](./logs/02_CheckAvail.json) | Availability verification before booking |
+| **Book** | [03_Book.json](./logs/03_Book.json) | Successful booking confirmation (Booking Code: B0226CBWWB) |
+| **Cancel** | [05_Cancel.json](./logs/05_Cancel.json) | Successful cancellation (Status: cxl) |
+
+### 9.1 Booking Details
+
+From the test run:
+- **Booking Code**: B0226CBWWB
+- **Status**: Confirmed (cnf) → Cancelled (cxl)
+- **Hotel**: THE CODE HOTEL (305592)
+- **Check-in**: 2026-02-13
+- **Check-out**: 2026-02-14
+- **Room Type**: Estate Suite Room (tsu)
+- **Agreement**: LCL.10000040
+- **Price**: $6,102.98 USD
 
 ---
 
