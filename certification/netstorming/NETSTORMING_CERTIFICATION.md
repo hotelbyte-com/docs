@@ -164,6 +164,7 @@ Complete request/response logs from successful E2E test run (February 6, 2026):
 | **HotelRates** | [01_HotelRates.json](./logs/01_HotelRates.json) | Search response with hotel details, room types, and pricing |
 | **CheckAvail** | [02_CheckAvail.json](./logs/02_CheckAvail.json) | Availability verification before booking |
 | **Book** | [03_Book.json](./logs/03_Book.json) | Successful booking confirmation (Booking Code: B0226KQD8C) |
+| **QueryOrder** | [04_QueryOrder_Failed.json](./logs/04_QueryOrder_Failed.json) | API error response (see Section 10 for details) |
 | **Cancel** | [05_Cancel.json](./logs/05_Cancel.json) | Successful cancellation (Status: cxl) |
 
 ### 9.1 Booking Details
