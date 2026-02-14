@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-02-14T07:25:42Z",
+  "sourceReport": "supplier/integration/etg/certification_reports/certification_report_Scenario1_Refundable_MultiRoom_20260214_142741.json",
+  "testDate": "2026-02-14 14:27:41",
+  "scenario": "Scenario1_Refundable_MultiRoom",
+  "result": {
+    "totalSteps": 5,
+    "passedSteps": 5,
+    "failedSteps": 0,
+    "successRate": 100,
+    "duration": "49.766844958s"
+  },
+  "orderInfo": {
+    "supplierReferenceNo": "425747649",
+    "hotelName": "test_hotel_do_not_book",
+    "checkInDate": "2026-03-16",
+    "checkOutDate": "2026-03-18",
+    "netPrice": 117.90333560245064,
+    "currency": "USD",
+    "refundable": true,
+    "cancelled": true
+  },
+  "steps": [
+    {
+      "step": "HotelRates",
+      "timestamp": "2026-02-14T14:26:59.357344+08:00",
+      "success": true,
+      "duration": "7.482334666s",
+      "request": {
+        "supplierHotelId": "test_hotel_do_not_book",
+        "checkIn": "2026-03-16",
+        "checkOut": "2026-03-18",
+        "countryCode": "TH",
+        "currency": "USD",
+        "roomOccupancies": [
+          {
+            "adultCount": 2,
+            "childrenAges": []
+          },
+          {
+            "adultCount": 2,
+            "childrenAges": [
+              5
+            ]
+          },
+          {
+            "adultCount": 2,
+            "childrenAges": []
+          }
+        ]
+      },
+      "response": {
+        "availableRooms": 3,
+        "firstRate": {
+          "ratePkgId": "23<HB>6<HB>h-c4455cc3-ffe2-55f5-a3fd-a599c8eb2eab",
+          "refundableMode": "full",
+          "refundableUntil": "2026-03-15T08:00:00Z",
+          "netRate": {
+            "currency": "USD",
+            "amount": 117.90333560245064
+          },
+          "roomCount": 3
+        }
+      }
+    },
+    {
+      "step": "CheckAvail",
+      "timestamp": "2026-02-14T14:26:59.996834+08:00",
+      "success": true,
+      "duration": "8.121831125s",
+      "request": {
+        "ratePkgId": "h-c4455cc3-ffe2-55f5-a3fd-a599c8eb2eab"
+      },
+      "response": {
+        "status": 1,
+        "available": true,
+        "roomCount": 3,
+        "occupancy": {
+          "adultCount": 2,
+          "childrenAges": []
+        }
+      }
+    },
+    {
+      "step": "Book",
+      "timestamp": "2026-02-14T14:27:37.780995+08:00",
+      "success": true,
+      "duration": "45.906175166s",
+      "request": {
+        "currency": "USD"
+      },
+      "response": {
+        "status": 1,
+        "bookingTime": "2026-02-14T14:27:37.775983+08:00",
+        "supplier": 23,
+        "supplierReferenceNo": "425747649"
+      }
+    },
+    {
+      "step": "QueryOrder",
+      "timestamp": "2026-02-14T14:27:41.249728+08:00",
+      "success": true,
+      "duration": "49.374914666s",
+      "request": {
+        "supplierReferenceNos": [
+          "425747649"
+        ]
+      },
+      "response": {
+        "orderCountReturned": 10,
+        "requestedSupplierReferenceNoFound": false
+      }
+    },
+    {
+      "step": "Cancel",
+      "timestamp": "2026-02-14T14:27:41.641441+08:00",
+      "success": true,
+      "duration": "49.76662875s",
+      "request": {
+        "supplierReferenceNo": "425747649",
+        "cancelType": 0
+      },
+      "response": {
+        "status": 3,
+        "cancelReferenceNo": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-02-14T07:25:08Z",
+  "sourceSummary": "supplier/integration/etg/certification_reports/certification_summary_20260214_142804.json",
+  "testDate": "2026-02-14 14:28:04",
+  "totalCases": 2,
+  "passedCases": 2,
+  "failedCases": 0,
+  "scenarios": [
+    {
+      "testCase": "Scenario1_Refundable_MultiRoom",
+      "totalSteps": 5,
+      "passedSteps": 5,
+      "failedSteps": 0,
+      "success": true,
+      "supplierReferenceNo": "425747649",
+      "checkInDate": "2026-03-16",
+      "checkOutDate": "2026-03-18",
+      "currency": "USD",
+      "netPrice": 117.90333560245064,
+      "cancelled": true
+    },
+    {
+      "testCase": "Scenario2_NonRefundable_SingleRoom",
+      "totalSteps": 5,
+      "passedSteps": 5,
+      "failedSteps": 0,
+      "success": true,
+      "supplierReferenceNo": "862822545",
+      "checkInDate": "2026-03-31",
+      "checkOutDate": "2026-04-02",
+      "currency": "USD",
+      "netPrice": 1.9060585432266848,
+      "cancelled": true
+    }
+  ]
+}
