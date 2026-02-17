@@ -106,7 +106,3 @@ When Book returns `HTTP 200`, `code=0`, and `data.hotelOrder.status` is `1` or `
 6. If still non-final after the polling window, keep order as pending and contact support with references.
 
 7. Our platform will soon launch order status notification callbacks, which will reduce polling overhead. Please stay tuned for release updates.
-
-## Appendix: Update Note
-
-- 2026-02-15: Added Book `status=1/0` handling recommendation based on customer question.
