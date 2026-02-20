@@ -1,108 +1,147 @@
-# OpenAPI Error Handling
+# OpenAPI Error Handling Guide
 
-This document describes the recommended error handling model for HotelByte OpenAPI.
+This document defines the unified HotelByte OpenAPI error-handling policy and adds explicit handling rules for **Book** responses with `status=0 (Unknown)` and `status=1 (Confirming)`.
 
-## HTTP Status Code vs Business Error Code
+---
 
-Our API uses a **dual-layer error system**:
+## 1. Scope
 
-1. **HTTP Status Code** - Standard HTTP response status (200, 400, 401, etc.)
-2. **Business Error Code** - Custom business logic error codes in response body
+This guide applies to:
+- `POST /api/trade/book`
+- `POST /api/trade/queryOrders`
+- `POST /api/trade/cancel`
 
-**Important**: Always check the `code` field in the response body, not just the HTTP status code.
+Goals:
+- Standardize HTTP error handling
+- Define required client actions for Book `status=0/1`
+- Reduce false-failure decisions, duplicate booking risk, and reconciliation loss
 
-## HTTP Status Code Specification
+---
 
-| HTTP Status | Meaning               | Description                         |
-|-------------|-----------------------|-------------------------------------|
-| **200**     | Success               | Request processed successfully      |
-| **400**     | Bad Request           | Request parameter validation failed |
-| **401**     | Unauthorized          | Invalid or expired token            |
-| **403**     | Forbidden             | No access to resource               |
-| **404**     | Not Found             | Requested resource not found        |
-| **429**     | Too Many Requests     | Exceeded request frequency limit    |
-| **500**     | Internal Server Error | Internal server error               |
-| **504**     | Gateway Timeout       | Request processing timeout          |
+## 2. Standard Error Response and HTTP Classification
 
-## Business Error Code Specification
+### 2.1 General Principles
 
-Business error codes follow the format: `[x][xx][xx][xxxx]`
+- Clients **MUST** route handling by HTTP status first, then by business fields.
+- Clients **MUST NOT** treat network errors, timeouts, or non-terminal statuses as final failure.
+- Clients **SHOULD** persist `platformReferenceNo`, `customerReferenceNo`, and `supplierReferenceNo` (if available) for verification.
 
-| Error Code    | HTTP Status | Meaning               | Description                                 |
-|---------------|-------------|-----------------------|---------------------------------------------|
-| **0**         | 200         | Success               | Request successful                          |
-| **100000400** | 400         | Parameter Error       | Request parameter validation failed         |
-| **100000401** | 401         | Authentication Failed | Invalid or expired token                    |
-| **100000403** | 403         | Permission Denied     | No access to resource                       |
-| **100000404** | 404         | Not Found             | Requested resource not found                |
-| **100000429** | 429         | Rate Limited          | Exceeded request frequency limit            |
-| **100000500** | 500         | System Error          | Internal server error                       |
-| **100000504** | 504         | Timeout               | Request processing timeout                  |
-| **100001003** | 500         | Duplicate Error       | Duplicate resource or operation             |
-| **100001004** | 500         | Dependency Error      | External dependency failure                 |
-| **100001005** | 400         | Page Size Exceeded    | Page size exceeds maximum limit             |
-| **100001006** | 400         | Not Implemented       | Feature not implemented                     |
-| **100001007** | 400         | Expired               | Resource or token expired                   |
-| **100001008** | 400         | Not Matched           | Data does not match expected format         |
-| **100001111** | 200         | ARI Changed           | Availability/rate information changed       |
-| **100001112** | 200         | Credit Limit          | Booking failed due to credit limit exceeded |
+### 2.2 Common HTTP Errors
 
-## Error Response Format
+| HTTP | Error Type | Meaning | Client Action |
+|---|---|---|---|
+| 400 | ParamErr | Invalid request | Fix request and retry with corrected input |
+| 401 | AuthErr | Unauthorized | Check token/JWT |
+| 403 | Forbidden | Permission denied | Check appKey scope |
+| 404 | NotFoundErr | Resource not found (for example expired session) | Restart from Search/CheckAvail |
+| 429 | RateLimitErr | Rate limited | Back off and retry with lower frequency |
+| 504 | TimeoutErr | Upstream/supplier timeout | Start QueryOrders verification; do not fail immediately |
 
-All error responses follow this structure:
+---
 
-```json
-{
-  "code": 100000400,
-  "msg": "param error"
-}
-```
+## 3. Handling Book Success Responses
 
-## Success Response Format
+When Book returns **HTTP 200** with `hotelOrder`, the request is accepted and the order is in the processing lifecycle. Next actions must follow `hotelOrder.status`.
 
-Successful responses include data:
+### 3.1 Status and Terminal Definition
 
-```json
-{
-  "code": 0,
-  "msg": "Success",
-  "data": {
-    // your response data
-  }
-}
-```
+| `hotelOrder.status` | Name | Terminal | Required Action |
+|---|---|---|---|
+| 0 | Unknown | No | Verify immediately via QueryOrders |
+| 1 | Confirming | No | Accept order and poll QueryOrders |
+| 2 | Confirmed | Yes | Treat as success |
+| 3 | Cancelled | Yes | Treat as cancelled terminal state |
+| 4 | Failed | Yes | Treat as failed terminal state |
+| 5 | CancelFailed | Yes | Treat as cancel-failed terminal state |
 
-## Error Handling Best Practices
+### 3.2 Rule for `status=1 (Confirming)`
 
-1. Always check `body.code` - HTTP status codes are for transport-level errors.
-2. Business logic errors may use HTTP 200 with non-zero `code`.
-3. Transport errors use appropriate HTTP status codes (4xx, 5xx).
-4. Retry logic should be based on business error codes, not HTTP status codes only.
+- The order is being confirmed by supplier and is **not a failure terminal state**.
+- Client **MUST NOT** reject the booking immediately.
+- Client **MUST** store order identifiers and poll QueryOrders.
+- Client **SHOULD** show “Confirming/In Progress”, not “Confirmed”.
 
-## Booking Status Handling Recommendation (Book API)
+### 3.3 Rule for `status=0 (Unknown)`
 
-Customer question: what should we do if booking `status` is `1` (Confirming) or `0` (Unknown), and we currently reject it?
+- The current status is unknown and requires verification; it is **not an immediate failure**.
+- Client **MUST NOT** reject immediately or rebook immediately.
+- Client **MUST** call QueryOrders right away for latest status.
+- Client **SHOULD** show “Status under verification” and allow refresh.
 
-Short answer: **do not reject immediately**.
+---
 
-When Book returns `HTTP 200`, `code=0`, and `data.hotelOrder.status` is `1` or `0`:
+## 4. QueryOrders Polling and Timeout Verification
 
-1. Accept the response and save identifiers:
-- `customerReferenceNo`
-- `supplierReferenceNo` (if present)
+### 4.1 When QueryOrders is Mandatory
 
-2. Call `QueryOrders` (prefer `customerReferenceNo`) to verify final status.
+- Book returns `504 TimeoutErr`
+- Book returns `200` with `hotelOrder.status` of `0` or `1`
 
-3. Use this status rule:
-- `1 (Confirming)`: in progress, not final.
-- `0 (Unknown)`: not final, needs verification.
-- `2 (Confirmed)`: success.
-- `3 (Cancelled)`, `4 (Failed)`, `5 (CancelFailed)`: final non-success.
+### 4.2 Recommended Polling Strategy (up to about 10 minutes)
 
-4. Recommended polling window: up to about 10 minutes (for example: immediately, 30s, 1m, 2m, then backoff).
+1. 1st check: immediately
+2. 2nd check: wait 30 seconds
+3. 3rd check: wait 1 minute
+4. 4th check: wait 2 minutes
+5. Continue with backoff; total verification window should be capped at around 10 minutes
 
-5. During verification, do not submit a duplicate booking for the same business intent.
+### 4.3 Stop Conditions
 
-6. If still non-final after the polling window, keep order as pending and contact support with references.
+Stop polling when status becomes one of:
+- `2 Confirmed`
+- `3 Cancelled`
+- `4 Failed`
+- `5 CancelFailed`
 
-7. Our platform will soon launch order status notification callbacks, which will reduce polling overhead. Please stay tuned for release updates.
+### 4.4 Anti-Duplicate and Consistency Rules
+
+- During `status=0/1` or `504` verification, clients **MUST NOT** place a semantic duplicate booking directly.
+- If business retry is required, clients **SHOULD** confirm the original order has reached a failed terminal outcome and keep idempotency controls.
+
+---
+
+## 5. Integration with Cancel
+
+- Cancel is a cancellation action, not a replacement for verification.
+- For `status=0/1`, clients **SHOULD** query latest status first, then decide whether cancellation is needed.
+- If end-user explicitly requests cancellation and current status is cancellable, call Cancel.
+- If the order is already terminal (`2/3/4/5`), process by terminal rules and do not issue repeated cancel requests.
+
+---
+
+## 6. FAQ
+
+### Q1. What should we do if Book returns `status=1` or `status=0` and we currently reject the booking on our side?
+
+**A: Do not reject immediately.**
+
+Minimal correct flow:
+1. Accept HTTP 200 and store order identifiers
+2. Call QueryOrders immediately
+3. If status becomes `2`, process as success
+4. If status becomes `3/4/5`, process as terminal cancelled/failed outcome
+5. Do not place a duplicate booking before verification is completed
+
+### Q2. Does Book `504` always mean booking failed?
+
+No. `504` means processing timeout, not guaranteed booking failure. Follow the QueryOrders verification flow in Section 4.
+
+---
+
+## 7. Quick Decision Table
+
+| Input Scenario | Immediate Action | Next Step |
+|---|---|---|
+| Book `200` + `status=2` | Mark success | Continue fulfillment flow |
+| Book `200` + `status=1` | Accept and start polling | Conclude only after terminal status |
+| Book `200` + `status=0` | Accept and verify immediately | Conclude only after terminal status |
+| Book `504` | Do not fail immediately; verify now | Confirm terminal status via polling |
+| QueryOrders returns `3/4/5` | Stop polling | Process as terminal cancelled/failed outcome |
+
+---
+
+## Appendix: Change Log
+
+| Date | Notes |
+|---|---|
+| 2026-02-14 | Official revision: merged general error handling with Book `status=0/1` guidance, replacing the extension-style document |
