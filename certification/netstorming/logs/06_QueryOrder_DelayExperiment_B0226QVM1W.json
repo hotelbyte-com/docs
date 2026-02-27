@@ -1,0 +1,59 @@
+{
+  "experiment": "Netstorming QueryOrder delay visibility",
+  "environment": "TEST",
+  "endpoint": "https://test.netstorming.net/kalima/call.php",
+  "actor": "ttdbooking",
+  "user": "xmluser",
+  "bookingCode": "B0226QVM1W",
+  "flow": [
+    "HotelRates (availability)",
+    "CheckAvail (Evaluate)",
+    "Book (confirmed)",
+    "QueryOrder (track) x3 with different delays",
+    "Cancel (cleanup)"
+  ],
+  "book": {
+    "status": "confirmed",
+    "supplierReferenceNo": "B0226QVM1W"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "delaySecondsSinceBook": 0,
+      "request": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><envelope><header><credential><actor>ttdbooking</actor><user>xmluser</user><password>ttdbookxml</password></credential><version>1.7.1</version><timestamp>...</timestamp></header><query type=\"track\" product=\"hotel\"><booking code=\"B0226QVM1W\"/></query></envelope>"
+      },
+      "response": {
+        "errorCode": "100001004",
+        "errorMessage": "OrderNotFoundError:NetStorming query order error"
+      }
+    },
+    {
+      "attempt": 2,
+      "delaySecondsSinceBook": 30,
+      "request": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><envelope><header><credential><actor>ttdbooking</actor><user>xmluser</user><password>ttdbookxml</password></credential><version>1.7.1</version><timestamp>...</timestamp></header><query type=\"track\" product=\"hotel\"><booking code=\"B0226QVM1W\"/></query></envelope>"
+      },
+      "response": {
+        "errorCode": "100001004",
+        "errorMessage": "OrderNotFoundError:NetStorming query order error"
+      }
+    },
+    {
+      "attempt": 3,
+      "delaySecondsSinceBook": 120,
+      "request": {
+        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><envelope><header><credential><actor>ttdbooking</actor><user>xmluser</user><password>ttdbookxml</password></credential><version>1.7.1</version><timestamp>...</timestamp></header><query type=\"track\" product=\"hotel\"><booking code=\"B0226QVM1W\"/></query></envelope>"
+      },
+      "response": {
+        "errorCode": "100001004",
+        "errorMessage": "OrderNotFoundError:NetStorming query order error"
+      }
+    }
+  ],
+  "cancel": {
+    "executed": true,
+    "note": "Test order cancelled to avoid charges"
+  }
+}
+
