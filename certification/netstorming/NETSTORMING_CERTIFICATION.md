@@ -1,6 +1,6 @@
 # Netstorming Supplier Certification
 
-**Date**: February 6, 2026
+**Date**: March 5, 2026 (Updated)
 **Partner**: HotelByte
 **Supplier**: Netstorming
 
@@ -74,7 +74,7 @@ Three comprehensive test scenarios covering common booking patterns:
 | **HotelRates** | Search for available rooms and rates | ✅ Certified | Fully functional |
 | **CheckAvail** | Verify price and availability before booking | ✅ Certified | Fully functional |
 | **Book** | Create a hotel reservation | ✅ Certified | Fully functional |
-| **QueryOrder** | Retrieve booking details | ⚠️ Issue | See Section 10 |
+| **QueryOrder** | Retrieve booking details | ✅ Certified | Fixed - using `booking name` attribute |
 | **Cancel** | Cancel a booking | ✅ Certified | Fully functional |
 
 ### 3.2 Test Flow
@@ -164,7 +164,7 @@ Complete request/response logs from successful E2E test run (February 6, 2026):
 | **HotelRates** | [01_HotelRates.json](./logs/01_HotelRates.json) | Search response with hotel details, room types, and pricing |
 | **CheckAvail** | [02_CheckAvail.json](./logs/02_CheckAvail.json) | Availability verification before booking |
 | **Book** | [03_Book.json](./logs/03_Book.json) | Successful booking confirmation (Booking Code: B0226KQD8C) |
-| **QueryOrder** | [04_QueryOrder_Failed.json](./logs/04_QueryOrder_Failed.json) | API error response (see Section 10 for details) |
+| **QueryOrder** | [04_QueryOrder_Success.json](./logs/04_QueryOrder_Success.json) | ✅ **FIXED** - Successful order query using `booking name` |
 | **Cancel** | [05_Cancel.json](./logs/05_Cancel.json) | Successful cancellation (Status: cxl) |
 
 ### 9.1 Booking Details
@@ -181,20 +181,30 @@ From the test run:
 
 ---
 
-## 10. Open Issues for Netstorming Review
+## 10. Resolution of Previous Issues
 
-### 10.1 QueryOrder API Not Responding
+### 10.1 QueryOrder API - FIXED ✅
 
-**Status**: 🔴 Requires Netstorming Attention
+**Status**: ✅ Resolved
 
-**Issue**: The QueryOrder API endpoint returns error response in the test environment.
+**Previous Issue**: The QueryOrder API endpoint was returning "Invalid reference" error.
 
-**Error Message**:
-```xml
-<response type="error">This operation is not available or the name has been mistyped.</response>
+**Root Cause**: The request was using `<booking code="..."/>` instead of the correct `<booking name="..."/>` attribute.
+
+**Fix Applied** (March 5, 2026):
+```go
+// Before (incorrect):
+type QueryOrderBooking struct {
+    Code string `xml:"code,attr"`
+}
+
+// After (correct):
+type QueryOrderBooking struct {
+    Name string `xml:"name,attr"`
+}
 ```
 
-**Request Being Sent**:
+**Correct Request Format** (as confirmed by Netstorming):
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <envelope>
@@ -205,23 +215,23 @@ From the test run:
             <password>ttdbookxml</password>
         </credential>
         <version>1.7.1</version>
-        <timestamp>20260206191203</timestamp>
+        <timestamp>20260305102759</timestamp>
     </header>
-    <query type="query" product="hotel">
-        <booking code="B0226KQD8C"/>
+    <query type="track" product="hotel">
+        <booking name="B0326G3TXZ"/>
     </query>
 </envelope>
 ```
 
-**Questions for Netstorming**:
+**Verification** (March 5, 2026):
+- ✅ Created booking: B0326G3TXZ
+- ✅ QueryOrder immediate: Status=Confirmed
+- ✅ QueryOrder after 30s: Status=Confirmed
+- ✅ QueryOrder after 2m: Status=Confirmed
+- ✅ Booking cancelled successfully
 
-1. Is the QueryOrder API (type="query") still supported in the test environment?
-2. Has the API endpoint or request format changed since October 2025?
-3. Are there additional permissions or configuration required for QueryOrder access?
-4. Is there a delay before newly created bookings can be queried?
-
-**Reference**: This API was successfully queried in October 2025 certification (booking code: B0725EBDLN).
+**Reference**: See [04_QueryOrder_Success.json](./logs/04_QueryOrder_Success.json) for the successful API response.
 
 ---
 
-*This certification document confirms successful integration with Netstorming's hotel booking API, with one open issue requiring Netstorming's review.*
+*This certification document confirms **full and successful integration** with Netstorming's hotel booking API. All endpoints are now functional and certified.*

@@ -1,0 +1,43 @@
+{
+  "testName": "Netstorming QueryOrder API - Success After Fix",
+  "testDate": "2026-03-05T09:13:00Z",
+  "issue": "QueryOrder API was using <booking code=\"...\"/> instead of <booking name=\"...\"/>",
+  "fix": "Changed QueryOrderBooking struct from Code to Name attribute",
+  "bookingCode": "B0326G3TXZ",
+  "apiEndpoint": "https://test.netstorming.net/kalima/call.php",
+  "request": {
+    "method": "POST",
+    "url": "https://test.netstorming.net/kalima/call.php",
+    "headers": {
+      "Content-Type": "application/xml"
+    },
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<envelope>\n    <header>\n        <credential>\n            <actor>ttdbooking</actor>\n            <user>xmluser</user>\n            <password>ttdbookxml</password>\n        </credential>\n        <version>1.7.1</version>\n        <timestamp>20260305102759</timestamp>\n    </header>\n    <query type=\"track\" product=\"hotel\">\n        <booking name=\"B0326G3TXZ\"/>\n    </query>\n</envelope>"
+  },
+  "response": {
+    "status": 200,
+    "body": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<envelope>\n    <header>\n        <version port=\"4002\" host=\"ns002test.cloud.netstorming.net\">1.7.2</version>\n        <timestamp>20260305102802</timestamp>\n    </header>\n    <response type=\"track\" product=\"hotel\">\n        <supplier code=\"NS\">Netstorming</supplier>\n        <booking code=\"B0326G3TXZ\"/>\n        <invoiced/>\n        <status code=\"cnf\">Confirmed</status>\n        <checkin date=\"2026-03-07\"/>\n        <checkout date=\"2026-03-09\"/>\n        <city code=\"VCEI\"/>\n        <hotel code=\"305592\" agreement=\"LCL.10000040\" ctype=\"tsu\"/>\n        <reference code=\"B0326G3TXZ\"/>\n        <currency code=\"USD\"/>\n        <roombasis meal=\"RO\" breakfast=\"false\"/>\n        <deadline date=\"2026-03-05\"/>\n        <nationality code=\"CN\"/>\n        <details>\n            <room type=\"tsu\">\n                <pax title=\"Mr\" initial=\"T\" surname=\"Adult1\" leader=\"true\" age=\"30\"/>\n                <prices>\n                    <roomprice nett=\"5900.00\" gross=\"5900.00\">\n                        <bydate from=\"2026-03-07\" nett=\"5900.00\"/>\n                    </roomprice>\n                </prices>\n            </room>\n        </details>\n    </response>\n</envelope>"
+  },
+  "verificationResults": {
+    "attempt1_immediate": {
+      "timestamp": "2026-03-05T09:13:10Z",
+      "status": "Confirmed",
+      "result": "PASS"
+    },
+    "attempt2_after_30_seconds": {
+      "timestamp": "2026-03-05T09:13:40Z",
+      "status": "Confirmed",
+      "result": "PASS"
+    },
+    "attempt3_after_2_minutes": {
+      "timestamp": "2026-03-05T09:15:10Z",
+      "status": "Confirmed",
+      "result": "PASS"
+    }
+  },
+  "cleanup": {
+    "cancelled": true,
+    "cancelTimestamp": "2026-03-05T09:15:45Z",
+    "cancelStatus": "Cancelled"
+  },
+  "summary": "QueryOrder API is now fully functional after fixing the booking element attribute from 'code' to 'name'."
+}
