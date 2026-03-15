@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-02-14T01:50:48.853087+08:00",
+  "supplier": "HeyTrip",
+  "apiName": "QueryOrder",
+  "url": "https://smbizorder.heytripgo.com/v3/api/Order/status",
+  "method": "POST",
+  "headers": {
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "X-Client-Id": [
+      "<redacted>"
+    ],
+    "X-Api-Key": [
+      "<redacted>"
+    ],
+    "Timestamp": [
+      "1771005048"
+    ],
+    "Sign": [
+      "<redacted>"
+    ],
+    "Accept-Encoding": [
+      "gzip"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "client_reference_id": "V2602140150480150485153807",
+    "reservation_id": "V2602140150480150485153807"
+  },
+  "curlCommand": "curl -X POST -H 'X-Client-Id: <redacted>' -H 'X-Api-Key: <redacted>' -H 'Timestamp: 1771005048' -H 'Sign: <redacted>' -H 'Accept-Encoding: gzip' -H 'Content-Type: application/json; charset=utf-8' 'https://smbizorder.heytripgo.com/v3/api/Order/status' -d '{\"client_reference_id\":\"V2602140150480150485153807\",\"reservation_id\":\"V2602140150480150485153807\"}'",
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Date": [
+        "Fri, 13 Feb 2026 17:50:51 GMT"
+      ],
+      "Content-Type": [
+        "application/json"
+      ],
+      "Content-Encoding": [
+        "gzip"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ],
+      "Server": [
+        "Microsoft-IIS/10.0"
+      ],
+      "Access-Control-Allow-Origin": [
+        "*"
+      ],
+      "X-Powered-By": [
+        "ASP.NET"
+      ]
+    },
+    "body": "\u001f\b\u0000\u0000\u0000\u0000\u0000\u0002\n«VJ-*Ê/OÎOIU²240Ò\nä¦\u0016\u0017'¦\u0003Å<óJRò\u0012s\u0014SÊR\u0014ÀòzJµ\u0000¦r_«;\u0000\u0000\u0000",
+    "contentType": "application/json",
+    "duration": 2240040667
+  },
+  "logId": ""
+}

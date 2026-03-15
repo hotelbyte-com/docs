@@ -3,28 +3,46 @@
 ## Scope
 
 - Supplier: **HeyTrip**
-- Test date: **2026-03-15**
-- Environment: **DEV (offline credential)**
-- Scenario: **Single-room booking lifecycle**
+- Verification set: **3 end-to-end booking scenarios**
+- Authentication model: **API key header (`X-Api-Key`) + signed request headers (`X-Client-Id`, `Timestamp`, `Sign`)**
+- Supplier hosts covered:
+  - `https://smbizstatic.heytripgo.com`
+  - `https://smbizsearch.heytripgo.com`
+  - `https://smbizorder.heytripgo.com`
 
-## Scenario → Supplier API → Request Log
+We have completed validation testing and attached full request/response logs for your review.
 
-| Scenario Step | Supplier API Endpoint | Method | Full Request/Response Log |
+## Scenario 1 (Booking Ref: `V2603150333070333079739120`)
+
+| Step | Supplier API Endpoint | Method | Full Request/Response Log |
 |---|---|---|---|
-| 1. Static catalog load | `/v3/api/Static/catalog/hotels` | GET | [01_Static_HotelsCatalog.json](https://github.com/hotelbyte-com/docs/raw/main/certification/heytrip/logs/2026-03-15_certification/01_Static_HotelsCatalog.json) |
-| 2. Hotel search | `/v3/api/Search/search` | POST | [02_Search_Search.json](https://github.com/hotelbyte-com/docs/raw/main/certification/heytrip/logs/2026-03-15_certification/02_Search_Search.json) |
-| 3. Price check | `/v3/api/Order/checkPrice` | POST | [03_Order_CheckPrice.json](https://github.com/hotelbyte-com/docs/raw/main/certification/heytrip/logs/2026-03-15_certification/03_Order_CheckPrice.json) |
-| 4. Booking create | `/v3/api/Order/book` | POST | [04_Order_Book.json](https://github.com/hotelbyte-com/docs/raw/main/certification/heytrip/logs/2026-03-15_certification/04_Order_Book.json) |
-| 5. Order status query | `/v3/api/Order/status` | POST | [05_Order_Status.json](https://github.com/hotelbyte-com/docs/raw/main/certification/heytrip/logs/2026-03-15_certification/05_Order_Status.json) |
-| 6. Order cancel | `/v3/api/Order/cancel` | POST | [06_Order_Cancel.json](https://github.com/hotelbyte-com/docs/raw/main/certification/heytrip/logs/2026-03-15_certification/06_Order_Cancel.json) |
+| Static catalog | `/v3/api/Static/catalog/hotels` | GET | [01_Static_HotelsCatalog.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario1_2026-03-15_0333/01_Static_HotelsCatalog.json) |
+| Search | `/v3/api/Search/search` | POST | [02_Search_Search.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario1_2026-03-15_0333/02_Search_Search.json) |
+| Check price | `/v3/api/Order/checkPrice` | POST | [03_Order_CheckPrice.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario1_2026-03-15_0333/03_Order_CheckPrice.json) |
+| Book | `/v3/api/Order/book` | POST | [04_Order_Book.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario1_2026-03-15_0333/04_Order_Book.json) |
+| Query order | `/v3/api/Order/status` | POST | [05_Order_Status.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario1_2026-03-15_0333/05_Order_Status.json) |
+| Cancel order | `/v3/api/Order/cancel` | POST | [06_Order_Cancel.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario1_2026-03-15_0333/06_Order_Cancel.json) |
 
-## Result
+## Scenario 2 (Booking Ref: `V2603150402330402336693024`)
 
-- Lifecycle result: **PASS**
-- Booking reference used in query/cancel: `V2603150402330402336693024`
-- SearchOrders observation: upstream range lookup did not return the newly created order in this run.
+| Step | Supplier API Endpoint | Method | Full Request/Response Log |
+|---|---|---|---|
+| Static catalog | `/v3/api/Static/catalog/hotels` | GET | [01_Static_HotelsCatalog.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario2_2026-03-15_0402/01_Static_HotelsCatalog.json) |
+| Search | `/v3/api/Search/search` | POST | [02_Search_Search.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario2_2026-03-15_0402/02_Search_Search.json) |
+| Check price | `/v3/api/Order/checkPrice` | POST | [03_Order_CheckPrice.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario2_2026-03-15_0402/03_Order_CheckPrice.json) |
+| Book | `/v3/api/Order/book` | POST | [04_Order_Book.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario2_2026-03-15_0402/04_Order_Book.json) |
+| Query order | `/v3/api/Order/status` | POST | [05_Order_Status.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario2_2026-03-15_0402/05_Order_Status.json) |
+| Cancel order | `/v3/api/Order/cancel` | POST | [06_Order_Cancel.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario2_2026-03-15_0402/06_Order_Cancel.json) |
 
-## Data Safety
+## Scenario 3 (Booking Ref: `V2602140150480150485153807`)
 
-- Full supplier request/response payloads are preserved.
-- Sensitive auth fields are masked in public artifacts: `X-Api-Key`, `X-Client-Id`, `Sign`.
+| Step | Supplier API Endpoint | Method | Full Request/Response Log |
+|---|---|---|---|
+| Static catalog | `/v3/api/Static/catalog/hotels` | GET | [01_Static_HotelsCatalog.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario3_2026-02-14_0150/01_Static_HotelsCatalog.json) |
+| Search | `/v3/api/Search/search` | POST | [02_Search_Search.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario3_2026-02-14_0150/02_Search_Search.json) |
+| Check price | `/v3/api/Order/checkPrice` | POST | [03_Order_CheckPrice.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario3_2026-02-14_0150/03_Order_CheckPrice.json) |
+| Book | `/v3/api/Order/book` | POST | [04_Order_Book.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario3_2026-02-14_0150/04_Order_Book.json) |
+| Query order | `/v3/api/Order/status` | POST | [05_Order_Status.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario3_2026-02-14_0150/05_Order_Status.json) |
+| Cancel order | `/v3/api/Order/cancel` | POST | [06_Order_Cancel.json](https://raw.githubusercontent.com/hotelbyte-com/docs/main/certification/heytrip/logs/scenario3_2026-02-14_0150/06_Order_Cancel.json) |
+
+Please review and confirm.

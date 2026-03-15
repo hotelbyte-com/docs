@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-02-14T01:50:45.53414+08:00",
+  "supplier": "HeyTrip",
+  "apiName": "CheckAvail",
+  "url": "https://smbizorder.heytripgo.com/v3/api/Order/checkPrice",
+  "method": "POST",
+  "headers": {
+    "X-Api-Key": [
+      "<redacted>"
+    ],
+    "Timestamp": [
+      "1771005045"
+    ],
+    "Sign": [
+      "<redacted>"
+    ],
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "X-Client-Id": [
+      "<redacted>"
+    ],
+    "Accept-Encoding": [
+      "gzip"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "currency": "USD",
+    "check_in": "2026-03-16",
+    "check_out": "2026-03-18",
+    "guests_groups": [
+      {
+        "adults": 1
+      }
+    ],
+    "hotel_id": "1172416",
+    "rate_id": "qb1rt8/WTdHq49Zk5KnXCLbXd/mx8LtSSNlKD8QYtJZ5N4HRG8KG0ZFWHtl9SbSkNsDI4+2cvX8UcKmPya+ygVEJXVtp8nnc1N4H59mNUv2Kyt3MQH7oyzwdT8Fl35OQHgXee/+ngQGMgCYKHHyxMNANuKXBxcAb9NCMBwHqh40="
+  },
+  "curlCommand": "curl -X POST -H 'Content-Type: application/json; charset=utf-8' -H 'X-Client-Id: <redacted>' -H 'Accept-Encoding: gzip' -H 'X-Api-Key: <redacted>' -H 'Timestamp: 1771005045' -H 'Sign: <redacted>' 'https://smbizorder.heytripgo.com/v3/api/Order/checkPrice' -d '{\"check_in\":\"2026-03-16\",\"check_out\":\"2026-03-18\",\"guests_groups\":[{\"adults\":1}],\"hotel_id\":\"1172416\",\"rate_id\":\"qb1rt8/WTdHq49Zk5KnXCLbXd/mx8LtSSNlKD8QYtJZ5N4HRG8KG0ZFWHtl9SbSkNsDI4+2cvX8UcKmPya+ygVEJXVtp8nnc1N4H59mNUv2Kyt3MQH7oyzwdT8Fl35OQHgXee/+ngQGMgCYKHHyxMNANuKXBxcAb9NCMBwHqh40=\",\"currency\":\"USD\"}'",
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Date": [
+        "Fri, 13 Feb 2026 17:50:46 GMT"
+      ],
+      "Content-Type": [
+        "application/json"
+      ],
+      "Content-Encoding": [
+        "gzip"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ],
+      "Server": [
+        "Microsoft-IIS/10.0"
+      ],
+      "Access-Control-Allow-Origin": [
+        "*"
+      ],
+      "X-Powered-By": [
+        "ASP.NET"
+      ]
+    },
+    "body": "\u001f\b\u0000\u0000\u0000\u0000\u0000\u0002\nÍRí¢0\u0014}\u0015Ã_gV\u0010A0Ù\u001fã' ß©µb¶ \u0014\u0005gçÝ·ì8ì\u000blBÒpî¹çÞçWé\u0014qDvø µ$EiÖ\u001b.=H\tà(ZÏ¯ÒßÂy¯$Ü¨­æ\u0007ëÜ0·¡f³ug¼_\u001fj47ÆÜ÷]bw\roÃG[ÍmX³a\u000fämeqbú{?tÓî°Q­ÃËÚX@N\u000bP-eo´^òØ`\f*¢I3©»¸Ôí«g5£âv=Ì>Qµg\u0005kjU\u0016x\u0003'èllË*rÇ}r3{ÝÎáÓÞt;NûjO\rù§p¿¢p÷_\u0018¿Íy¯^\u001dày?`§»9ùV°rN½9\u0019­ÔYUà33c+YeØÙR/GÌ?^ONvá\u0000\u0000u6í«\u0011ÒQ_×/\u0013\u0012®bË\u0000\u001e¯s{îÌ²ëÞ^\u001875ñp9Ô©ë\u0005PvÀ´ .F{çÖW­_ZÛÏÅ­¼4\\­'Æf3ípº\u001cË\u001bGg&íÁÅ\tHj©fý¢\u001cA²»C,#äA\u0011¥8MqÄ>4cQ²£}çr+ôþ\u0013\"Æw¼\u0005AÌA\u0002\u0011\u0003a$ÁB`\u000b¿+\u0000Àã\u0003Na1ÄC\u001e\u0001IÑD8?×² \u0010\u001eAÊE#\u0003\u0014}Þ^<`\u0010\u0011\u0002¸p¼#!¾¯õ1¨ ×åºþ(«²>W´fo[º åà J¥$èÉ¹¢bÆÉoE3MÝP\u0006YP&âVÆB(@'\bQ«\u000e» ²øòO·`Ý¹e`ïÔ;£¬Ú9\u0003c.\u0013öJ\u0019ß·?\u001bjBEÜ\u0003\u0000\u0000",
+    "contentType": "application/json",
+    "duration": 1400837125
+  },
+  "logId": ""
+}
