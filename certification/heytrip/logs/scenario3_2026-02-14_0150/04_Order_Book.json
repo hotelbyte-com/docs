@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-02-14T01:50:47.237184+08:00",
+  "supplier": "HeyTrip",
+  "apiName": "Book",
+  "url": "https://smbizorder.heytripgo.com/v3/api/Order/book",
+  "method": "POST",
+  "headers": {
+    "Timestamp": [
+      "1771005047"
+    ],
+    "Sign": [
+      "<redacted>"
+    ],
+    "Accept-Encoding": [
+      "gzip"
+    ],
+    "X-Api-Key": [
+      "<redacted>"
+    ],
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "X-Client-Id": [
+      "<redacted>"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "currency": "USD",
+    "hotel_id": "1172416",
+    "book_id": "qb1rt8/WTdHq49Zk5KnXCLbXd/mx8LtSSNlKD8QYtJZ5N4HRG8KG0ZFWHtl9SbSkNsDI4+2cvX8UcKmPya+ygVEJXVtp8nnc1N4H59mNUv2Kyt3MQH7oyzwdT8Fl35OQzTtE2+GiTFpOiMDYhSHgWMhETlJW3RFOiICWgSn9rcLHrUq0cCZmQxenSfwhOCufckGilgeCYBw8kmJF66vOlkWpH8aQt/lqBTMRuwbKU8z3x0yLIVI6mNQgvk0MaPymNiebMzF3Hj5BSxHtlQskWXO8YYGRaZIPVL0YM6n47mE=",
+    "client_reference_id": "-1771005047",
+    "reservation_holder": {
+      "first_name": "Test",
+      "last_name": "User",
+      "is_child": false
+    },
+    "contact_info": {
+      "email": "test@example.com",
+      "phone": "13800138000"
+    },
+    "price": 392.11,
+    "rooms": [
+      {
+        "id": "x13intl|15996837",
+        "guests": [
+          {
+            "first_name": "Test",
+            "last_name": "User",
+            "is_child": false
+          }
+        ]
+      }
+    ]
+  },
+  "curlCommand": "curl -X POST -H 'Content-Type: application/json; charset=utf-8' -H 'X-Client-Id: <redacted>' -H 'Timestamp: 1771005047' -H 'Sign: <redacted>' -H 'Accept-Encoding: gzip' -H 'X-Api-Key: <redacted>' 'https://smbizorder.heytripgo.com/v3/api/Order/book' -d '{\"hotel_id\":\"1172416\",\"book_id\":\"qb1rt8/WTdHq49Zk5KnXCLbXd/mx8LtSSNlKD8QYtJZ5N4HRG8KG0ZFWHtl9SbSkNsDI4+2cvX8UcKmPya+ygVEJXVtp8nnc1N4H59mNUv2Kyt3MQH7oyzwdT8Fl35OQzTtE2+GiTFpOiMDYhSHgWMhETlJW3RFOiICWgSn9rcLHrUq0cCZmQxenSfwhOCufckGilgeCYBw8kmJF66vOlkWpH8aQt/lqBTMRuwbKU8z3x0yLIVI6mNQgvk0MaPymNiebMzF3Hj5BSxHtlQskWXO8YYGRaZIPVL0YM6n47mE=\",\"client_reference_id\":\"-1771005047\",\"reservation_holder\":{\"first_name\":\"Test\",\"last_name\":\"User\",\"is_child\":false},\"contact_info\":{\"email\":\"test@example.com\",\"phone\":\"13800138000\"},\"price\":392.11,\"rooms\":[{\"id\":\"x13intl|15996837\",\"guests\":[{\"first_name\":\"Test\",\"last_name\":\"User\",\"is_child\":false}]}],\"currency\":\"USD\"}'",
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Vary": [
+        "Accept-Encoding"
+      ],
+      "Server": [
+        "Microsoft-IIS/10.0"
+      ],
+      "Access-Control-Allow-Origin": [
+        "*"
+      ],
+      "X-Powered-By": [
+        "ASP.NET"
+      ],
+      "Date": [
+        "Fri, 13 Feb 2026 17:50:47 GMT"
+      ],
+      "Content-Type": [
+        "application/json"
+      ],
+      "Content-Encoding": [
+        "gzip"
+      ]
+    },
+    "body": "\u001f\b\u0000\u0000\u0000\u0000\u0000\u0002\n%A\n@\f\u0000ÿs\u000bu»âCz]Dc\t,±d³\u0005)ý»+^æ0ÌüÀ¸°}'M,0Â«{bG=RÀ~¸\u0018(<\u0006p9\u000b«'ãuæk¹SØÒ³)>y-MX\u0017ÑwSº¹¬{ªaÔóÿ\u0000ú<\u0019½x\u0000\u0000\u0000",
+    "contentType": "application/json",
+    "duration": 1309183291
+  },
+  "logId": ""
+}
