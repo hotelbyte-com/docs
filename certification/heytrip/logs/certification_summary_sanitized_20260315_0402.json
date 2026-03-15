@@ -1,0 +1,24 @@
+{
+  "supplier": "HeyTrip",
+  "testDate": "2026-03-15 04:02:39",
+  "environment": "DEV",
+  "result": "PASS",
+  "durationSeconds": 21.239,
+  "steps": [
+    "HotelList/HotelsMetadata: PASS",
+    "HotelRates: PASS",
+    "CheckAvail: PASS",
+    "Book: PASS",
+    "QueryOrder: PASS",
+    "SearchOrders: PARTIAL",
+    "Cancel: PASS"
+  ],
+  "remarks": [
+    "No credential secret values are included in this sanitized report.",
+    "SearchOrders did not include the newly booked order in queried range during this run."
+  ],
+  "nextActions": [
+    "Finish hotel mapping coverage.",
+    "Activate ONLINE credential and run formal submission cycle."
+  ]
+}
