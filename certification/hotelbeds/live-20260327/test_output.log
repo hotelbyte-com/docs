@@ -1,0 +1,244 @@
+
+Mockey check failed, please add -gcflags="all=-N -l".
+(Set env MOCKEY_CHECK_GCFLAGS=false to disable gcflags check) 
+		
+=== RUN   TestHotelbeds_LIVE_Certification
+    certification_live_test.go:61: 🔄 Starting Hotelbeds LIVE certification test...
+    certification_live_test.go:62: 📋 Using LIVE credentials (Credential ID 20)
+    certification_live_test.go:63: 🌐 Using LIVE endpoints (api.hotelbeds.com)
+    certification_live_test.go:64: 📋 Total test cases: 4
+    certification_live_test.go:71: 
+        === Test Case 1/4: Scenario1_Refundable_MultiRoom ===
+    certification_live_test.go:72: Description: 可退款多房间预订 - 3间房（2ADT, 2ADT+1CHD5, 2ADT）
+    certification_test.go:121: 📅 Check-in: 2026-04-26, Check-out: 2026-04-28
+    certification_test.go:163: 
+        === Step 1: HotelList ===
+    certification_test.go:222: ✅ HotelList successful, found 60 hotels
+    certification_test.go:234: 
+        🔄 Trying hotel 1/20: 2109
+    certification_test.go:267:   === Step 2: HotelRates ===
+    certification_test.go:286:   ✅ HotelRates successful, found 14 rooms
+    certification_test.go:342:   📊 Found 10 candidate rates
+    certification_test.go:350:     🎯 Selected rate: Room 1, Rate 1, Type=RECHECK, Refundable=true
+    certification_test.go:354:   === Step 3: CheckAvail ===
+    certification_test.go:371:   ✅ CheckAvail successful, Status: available (Type: RECHECK)
+    certification_test.go:374:   === Step 4: Book ===
+    certification_test.go:410:   ✅ Book successful: SupplierReferenceNo=102-20398156
+    certification_test.go:428:   === Step 5: QueryOrder ===
+    certification_test.go:441:   ✅ QueryOrder successful, Status: Confirmed
+    certification_test.go:445:   === Step 6: SearchOrders ===
+    certification_test.go:471:   ⚠️  SearchOrders did not find the order
+    certification_test.go:476:   === Step 7: Cancel ===
+    certification_test.go:493:   ✅ Cancel successful, Status: Unknown
+
+================================================================================
+📊 Hotelbeds Certification Test Summary
+================================================================================
+Test Date:    2026-03-27 15:04:26
+Test Name:    Scenario1_Refundable_MultiRoom_LIVE
+Total Steps:  7
+Passed:       7
+Failed:       0
+Success Rate: 100.00%
+Duration:     43.613022624s
+
+📋 Order Information:
+  Supplier Reference: 102-20398156
+  Platform Reference:  1774623827592269112
+  Hotel:              %!s(<nil>)
+  Room Type:          %!s(<nil>)
+  Rate Type:          %!s(<nil>)
+  Check In:           %!s(<nil>)
+  Check Out:          %!s(<nil>)
+  Net Price:          0.00 
+  Refundable:         <nil>
+  Cancelled:          <nil>
+================================================================================
+    certification_live_test.go:85: 📄 Report saved to: certification_reports/certification_report.json
+    certification_live_test.go:95: ✅ Test case Scenario1_Refundable_MultiRoom passed
+    certification_live_test.go:100: 🎫 LIVE booking created: 102-20398156
+    certification_live_test.go:71: 
+        === Test Case 2/4: Scenario2_NonRefundable_SingleRoom ===
+    certification_live_test.go:72: Description: 不可退款单房间预订 - 1间房（2ADT）
+    certification_test.go:121: 📅 Check-in: 2026-04-26, Check-out: 2026-04-28
+    certification_test.go:163: 
+        === Step 1: HotelList ===
+    certification_test.go:222: ✅ HotelList successful, found 1 hotels
+    certification_test.go:234: 
+        🔄 Trying hotel 1/1: 612581
+    certification_test.go:267:   === Step 2: HotelRates ===
+    certification_test.go:286:   ✅ HotelRates successful, found 6 rooms
+    certification_test.go:342:   📊 Found 5 candidate rates
+    certification_test.go:350:     🎯 Selected rate: Room 1, Rate 1, Type=BOOKABLE, Refundable=true
+    certification_test.go:354:   === Step 3: CheckAvail ===
+    certification_test.go:371:   ✅ CheckAvail successful, Status: available (Type: BOOKABLE)
+    certification_test.go:374:   === Step 4: Book ===
+    certification_test.go:410:   ✅ Book successful: SupplierReferenceNo=148-6031026
+    certification_test.go:428:   === Step 5: QueryOrder ===
+    certification_test.go:441:   ✅ QueryOrder successful, Status: Confirmed
+    certification_test.go:445:   === Step 6: SearchOrders ===
+    certification_test.go:471:   ⚠️  SearchOrders did not find the order
+    certification_test.go:476:   === Step 7: Cancel ===
+    certification_test.go:493:   ✅ Cancel successful, Status: Unknown
+
+================================================================================
+📊 Hotelbeds Certification Test Summary
+================================================================================
+Test Date:    2026-03-27 15:04:36
+Test Name:    Scenario2_NonRefundable_SingleRoom_LIVE
+Total Steps:  7
+Passed:       7
+Failed:       0
+Success Rate: 100.00%
+Duration:     7.107838381s
+
+📋 Order Information:
+  Supplier Reference: 148-6031026
+  Platform Reference:  1774623871258855788
+  Hotel:              %!s(<nil>)
+  Room Type:          %!s(<nil>)
+  Rate Type:          %!s(<nil>)
+  Check In:           %!s(<nil>)
+  Check Out:          %!s(<nil>)
+  Net Price:          0.00 
+  Refundable:         <nil>
+  Cancelled:          <nil>
+================================================================================
+    certification_live_test.go:85: 📄 Report saved to: certification_reports/certification_report.json
+    certification_live_test.go:95: ✅ Test case Scenario2_NonRefundable_SingleRoom passed
+    certification_live_test.go:100: 🎫 LIVE booking created: 148-6031026
+    certification_live_test.go:71: 
+        === Test Case 3/4: Scenario3_BOOKABLE_Type ===
+    certification_live_test.go:72: Description: BOOKABLE 类型测试 - 需要调用 CheckAvail 验价（符合供应商要求 #9）
+    certification_test.go:121: 📅 Check-in: 2026-04-26, Check-out: 2026-04-28
+    certification_test.go:163: 
+        === Step 1: HotelList ===
+    certification_test.go:222: ✅ HotelList successful, found 1 hotels
+    certification_test.go:234: 
+        🔄 Trying hotel 1/1: 612581
+    certification_test.go:267:   === Step 2: HotelRates ===
+    certification_test.go:286:   ✅ HotelRates successful, found 6 rooms
+    certification_test.go:342:   📊 Found 3 candidate rates
+    certification_test.go:350:     🎯 Selected rate: Room 1, Rate 1, Type=BOOKABLE, Refundable=true
+    certification_test.go:354:   === Step 3: CheckAvail ===
+    certification_test.go:371:   ✅ CheckAvail successful, Status: available (Type: BOOKABLE)
+    certification_test.go:374:   === Step 4: Book ===
+    certification_test.go:410:   ✅ Book successful: SupplierReferenceNo=148-6031027
+    certification_test.go:428:   === Step 5: QueryOrder ===
+    certification_test.go:441:   ✅ QueryOrder successful, Status: Confirmed
+    certification_test.go:445:   === Step 6: SearchOrders ===
+    certification_test.go:471:   ⚠️  SearchOrders did not find the order
+    certification_test.go:476:   === Step 7: Cancel ===
+    certification_test.go:493:   ✅ Cancel successful, Status: Unknown
+
+================================================================================
+📊 Hotelbeds Certification Test Summary
+================================================================================
+Test Date:    2026-03-27 15:04:46
+Test Name:    Scenario3_BOOKABLE_Type_LIVE
+Total Steps:  7
+Passed:       7
+Failed:       0
+Success Rate: 100.00%
+Duration:     6.960462837s
+
+📋 Order Information:
+  Supplier Reference: 148-6031027
+  Platform Reference:  1774623881329670519
+  Hotel:              %!s(<nil>)
+  Room Type:          %!s(<nil>)
+  Rate Type:          %!s(<nil>)
+  Check In:           %!s(<nil>)
+  Check Out:          %!s(<nil>)
+  Net Price:          0.00 
+  Refundable:         <nil>
+  Cancelled:          <nil>
+================================================================================
+    certification_live_test.go:85: 📄 Report saved to: certification_reports/certification_report.json
+    certification_live_test.go:95: ✅ Test case Scenario3_BOOKABLE_Type passed
+    certification_live_test.go:100: 🎫 LIVE booking created: 148-6031027
+    certification_live_test.go:71: 
+        === Test Case 4/4: Scenario4_RECHECK_Type ===
+    certification_live_test.go:72: Description: RECHECK 类型测试 - 需要验价后预订
+    certification_test.go:121: 📅 Check-in: 2026-04-10, Check-out: 2026-04-12
+    certification_test.go:163: 
+        === Step 1: HotelList ===
+    certification_test.go:222: ✅ HotelList successful, found 1 hotels
+    certification_test.go:234: 
+        🔄 Trying hotel 1/1: 612581
+    certification_test.go:267:   === Step 2: HotelRates ===
+    certification_test.go:286:   ✅ HotelRates successful, found 6 rooms
+    certification_test.go:342:   📊 Found 2 candidate rates
+    certification_test.go:350:     🎯 Selected rate: Room 1, Rate 1, Type=RECHECK, Refundable=true
+    certification_test.go:354:   === Step 3: CheckAvail ===
+    certification_test.go:371:   ✅ CheckAvail successful, Status: available (Type: RECHECK)
+    certification_test.go:374:   === Step 4: Book ===
+    certification_test.go:410:   ✅ Book successful: SupplierReferenceNo=148-6031030
+    certification_test.go:428:   === Step 5: QueryOrder ===
+    certification_test.go:441:   ✅ QueryOrder successful, Status: Confirmed
+    certification_test.go:445:   === Step 6: SearchOrders ===
+    certification_test.go:471:   ⚠️  SearchOrders did not find the order
+    certification_test.go:476:   === Step 7: Cancel ===
+    certification_test.go:493:   ✅ Cancel successful, Status: Unknown
+
+================================================================================
+📊 Hotelbeds Certification Test Summary
+================================================================================
+Test Date:    2026-03-27 15:05:25
+Test Name:    Scenario4_RECHECK_Type_LIVE
+Total Steps:  7
+Passed:       7
+Failed:       0
+Success Rate: 100.00%
+Duration:     35.74588572s
+
+📋 Order Information:
+  Supplier Reference: 148-6031030
+  Platform Reference:  1774623898922552500
+  Hotel:              %!s(<nil>)
+  Room Type:          %!s(<nil>)
+  Rate Type:          %!s(<nil>)
+  Check In:           %!s(<nil>)
+  Check Out:          %!s(<nil>)
+  Net Price:          0.00 
+  Refundable:         <nil>
+  Cancelled:          <nil>
+================================================================================
+    certification_live_test.go:85: 📄 Report saved to: certification_reports/certification_report.json
+    certification_live_test.go:95: ✅ Test case Scenario4_RECHECK_Type passed
+    certification_live_test.go:100: 🎫 LIVE booking created: 148-6031030
+    certification_live_test.go:106: 
+        === Generating LIVE Certification Summary Report ===
+
+================================================================================
+📊 Hotelbeds Certification Summary Report
+================================================================================
+Test Date:   2026-03-27 15:05:28
+Total Cases: 4
+Passed:      4
+Failed:      0
+Success Rate: 100.00%
+
+📋 Test Orders (4):
+  1. Supplier Ref: 102-20398156 | Platform Ref: 1774623827592269112 | Hotel: 2109 | Rate: RECHECK | Cancelled: true
+  2. Supplier Ref: 148-6031026 | Platform Ref: 1774623871258855788 | Hotel: 612581 | Rate: BOOKABLE | Cancelled: true
+  3. Supplier Ref: 148-6031027 | Platform Ref: 1774623881329670519 | Hotel: 612581 | Rate: BOOKABLE | Cancelled: true
+  4. Supplier Ref: 148-6031030 | Platform Ref: 1774623898922552500 | Hotel: 612581 | Rate: RECHECK | Cancelled: true
+================================================================================
+
+📋 Test Case Results:
+  1. Scenario1_Refundable_MultiRoom_LIVE: ✅ PASS (Passed: 7/7)
+  2. Scenario2_NonRefundable_SingleRoom_LIVE: ✅ PASS (Passed: 7/7)
+  3. Scenario3_BOOKABLE_Type_LIVE: ✅ PASS (Passed: 7/7)
+  4. Scenario4_RECHECK_Type_LIVE: ✅ PASS (Passed: 7/7)
+
+    certification_live_test.go:111: 📄 Summary report saved to: certification_reports/certification_report.json
+    certification_live_test.go:127: ✅ All test cases passed, LIVE certification completed successfully!
+    certification_live_test.go:130: 
+        === LIVE Booking References ===
+    certification_live_test.go:133: 🎫 Booking Reference: 102-20398156
+    certification_live_test.go:133: 🎫 Booking Reference: 148-6031026
+    certification_live_test.go:133: 🎫 Booking Reference: 148-6031027
+    certification_live_test.go:133: 🎫 Booking Reference: 148-6031030
+--- PASS: TestHotelbeds_LIVE_Certification (105.51s)
+PASS

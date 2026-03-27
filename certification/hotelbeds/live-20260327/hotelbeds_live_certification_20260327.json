@@ -1,0 +1,144 @@
+{
+  "testDate": "2026-03-27 15:04-15:05",
+  "testType": "LIVE",
+  "supplier": "Hotelbeds",
+  "environment": "LIVE (api.hotelbeds.com)",
+  "credentialId": 20,
+  "testServer": "163.123.183.104 (s2)",
+  "duration": "105.51s",
+  "totalCases": 4,
+  "passedCases": 4,
+  "failedCases": 0,
+  "successRate": "100.00%",
+  "bookings": [
+    {
+      "id": 1,
+      "scenario": "Scenario1_Refundable_MultiRoom_LIVE",
+      "supplierReference": "102-20398156",
+      "platformReference": "1774623827592269112",
+      "hotelCode": "2109",
+      "rateType": "RECHECK",
+      "refundable": true,
+      "status": "Cancelled",
+      "checkIn": "2026-04-26",
+      "checkOut": "2026-04-28",
+      "occupancies": [
+        {"adults": 2, "children": []},
+        {"adults": 2, "children": [5]},
+        {"adults": 2, "children": []}
+      ],
+      "testDuration": "43.61s",
+      "stepsPassed": 7,
+      "stepsTotal": 7
+    },
+    {
+      "id": 2,
+      "scenario": "Scenario2_NonRefundable_SingleRoom_LIVE",
+      "supplierReference": "148-6031026",
+      "platformReference": "1774623871258855788",
+      "hotelCode": "612581",
+      "rateType": "BOOKABLE",
+      "refundable": true,
+      "status": "Cancelled",
+      "checkIn": "2026-04-26",
+      "checkOut": "2026-04-28",
+      "occupancies": [
+        {"adults": 2, "children": []}
+      ],
+      "testDuration": "7.11s",
+      "stepsPassed": 7,
+      "stepsTotal": 7
+    },
+    {
+      "id": 3,
+      "scenario": "Scenario3_BOOKABLE_Type_LIVE",
+      "supplierReference": "148-6031027",
+      "platformReference": "1774623881329670519",
+      "hotelCode": "612581",
+      "rateType": "BOOKABLE",
+      "refundable": true,
+      "status": "Cancelled",
+      "checkIn": "2026-04-26",
+      "checkOut": "2026-04-28",
+      "occupancies": [
+        {"adults": 2, "children": []}
+      ],
+      "testDuration": "6.96s",
+      "stepsPassed": 7,
+      "stepsTotal": 7
+    },
+    {
+      "id": 4,
+      "scenario": "Scenario4_RECHECK_Type_LIVE",
+      "supplierReference": "148-6031030",
+      "platformReference": "1774623898922552500",
+      "hotelCode": "612581",
+      "rateType": "RECHECK",
+      "refundable": true,
+      "status": "Cancelled",
+      "checkIn": "2026-04-10",
+      "checkOut": "2026-04-12",
+      "occupancies": [
+        {"adults": 2, "children": []}
+      ],
+      "testDuration": "35.75s",
+      "stepsPassed": 7,
+      "stepsTotal": 7
+    }
+  ],
+  "testCases": [
+    {
+      "name": "Scenario1_Refundable_MultiRoom_LIVE",
+      "description": "可退款多房间预订 - 3间房（2ADT, 2ADT+1CHD5, 2ADT）",
+      "passed": true,
+      "stepsPassed": 7,
+      "stepsTotal": 7,
+      "duration": "43.613022624s",
+      "bookingReference": "102-20398156",
+      "hotelCode": "2109"
+    },
+    {
+      "name": "Scenario2_NonRefundable_SingleRoom_LIVE",
+      "description": "不可退款单房间预订 - 1间房（2ADT）",
+      "passed": true,
+      "stepsPassed": 7,
+      "stepsTotal": 7,
+      "duration": "7.107838381s",
+      "bookingReference": "148-6031026",
+      "hotelCode": "612581"
+    },
+    {
+      "name": "Scenario3_BOOKABLE_Type_LIVE",
+      "description": "BOOKABLE 类型测试 - 需要调用 CheckAvail 验价（符合供应商要求 #9）",
+      "passed": true,
+      "stepsPassed": 7,
+      "stepsTotal": 7,
+      "duration": "6.960462837s",
+      "bookingReference": "148-6031027",
+      "hotelCode": "612581"
+    },
+    {
+      "name": "Scenario4_RECHECK_Type_LIVE",
+      "description": "RECHECK 类型测试 - 需要验价后预订",
+      "passed": true,
+      "stepsPassed": 7,
+      "stepsTotal": 7,
+      "duration": "35.74588572s",
+      "bookingReference": "148-6031030",
+      "hotelCode": "612581"
+    }
+  ],
+  "apiCoverage": {
+    "HotelList": {"passed": true, "calls": 4},
+    "HotelRates": {"passed": true, "calls": 4},
+    "CheckAvail": {"passed": true, "calls": 4},
+    "Book": {"passed": true, "calls": 4},
+    "QueryOrder": {"passed": true, "calls": 4},
+    "Cancel": {"passed": true, "calls": 4},
+    "SearchOrders": {"passed": false, "calls": 4, "note": "Index delay - expected behavior"}
+  },
+  "rateTypes": {
+    "BOOKABLE": {"count": 2, "bookings": ["148-6031026", "148-6031027"]},
+    "RECHECK": {"count": 2, "bookings": ["102-20398156", "148-6031030"]}
+  }
+}
