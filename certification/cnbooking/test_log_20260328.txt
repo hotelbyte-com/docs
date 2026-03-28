@@ -1,0 +1,38 @@
+=== RUN   TestCNBooking_FullFlow
+    full_flow_test.go:96: Starting CNBooking full flow test...
+    full_flow_test.go:97: Using 3 hotel IDs (from env/default or HotelsMetadata)
+    full_flow_test.go:106: Attempting hotel 1/3: 5083719
+    full_flow_test.go:172:   === 2. HotelRates ===
+    full_flow_test.go:201:   ❌ HotelRates failed: failed to call CNBooking RatePlanSearch API: ErrorCode=[100001004] Message=[30011:No Data]
+    full_flow_test.go:120: Skipping hotel 5083719, trying next one...
+    full_flow_test.go:106: Attempting hotel 2/3: 5031953
+    full_flow_test.go:172:   === 2. HotelRates ===
+    full_flow_test.go:201:   ❌ HotelRates failed: failed to call CNBooking RatePlanSearch API: ErrorCode=[100001004] Message=[30011:No Data]
+    full_flow_test.go:120: Skipping hotel 5031953, trying next one...
+    full_flow_test.go:106: Attempting hotel 3/3: 209968
+    full_flow_test.go:172:   === 2. HotelRates ===
+    full_flow_test.go:208:   ✅ Found 5 rooms
+    full_flow_test.go:215:     🔄 Trying room 1/5: biaoZ Big.
+    full_flow_test.go:227:       🔄 Trying rate 1/3: Price=24.36 USD
+[DEBUG CheckAvail] SessionParams: hotelId=209968, roomId=897381, ratePlanId=1634, totalPrice=24.36, currency=USD
+[DEBUG CheckAvail] Request: ActionName=PreBookingCheck
+[DEBUG CheckAvail] HotelId=209968, RoomId=897381, RateplanId=1634
+[DEBUG CheckAvail] CheckIn=2026-04-27, CheckOut=2026-04-29, Currency=USD, OrderAmount=24.36
+    full_flow_test.go:239:       ✅ CheckAvail successful, Status: available
+[DEBUG ConvertDomainToBookRequest] Input req.PlatformReferenceNo=-1774712848244
+[DEBUG ConvertDomainToBookRequest] req.RatePkgId=1634
+[DEBUG ConvertDomainToBookRequest] req.Holder.FirstName=Test
+[DEBUG Book] Setting CustomerOrderId=-1774712848244 (PlatformReferenceNo=-1774712848244)
+    full_flow_test.go:255:       ✅ Booking successful: SupplierReferenceNo=CN26032800064A
+    full_flow_test.go:258:       ⏳ Waiting for order sync...
+    full_flow_test.go:269:       ✅ QueryOrder successful, Status: Confirmed
+    full_flow_test.go:277:       SearchOrders range: 2026-04-27 - 2026-04-28
+    full_flow_test.go:297:       ⚠️  SearchOrders succeeded but order CN26032800064A not found in range 2026-04-27 - 2026-04-28
+    full_flow_test.go:306:       ⚠️  WARNING: Failed to cancel test order: ErrorCode=[100001004] Message=[order not found: ]
+    full_flow_test.go:307:           SupplierReferenceNo: CN26032800064A
+    full_flow_test.go:308:           建议手动确认或取消该订单，避免产生费用！
+    full_flow_test.go:309:           订单可能因为 API 同步延迟而暂时无法查询/取消
+    full_flow_test.go:116: Successfully completed full flow with hotel: 209968
+--- PASS: TestCNBooking_FullFlow (31.39s)
+PASS
+ok  	hotel/supplier/integration/cnbooking	31.465s
