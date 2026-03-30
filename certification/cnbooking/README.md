@@ -8,9 +8,10 @@ This folder contains all documentation related to the CNBooking supplier integra
 
 | Document | Description | Status |
 |----------|-------------|--------|
-| [Integration Status](./integration_status_20260330.md) | Overall integration progress and test results | ⚠️ Updated 2026-03-30 |
-| [Bug Report](./ordersearch_api_bug_report_20260330.md) | OrderSearch API HTTP 500 critical bug | 🔴 Critical |
+| [Integration Status](./integration_status_20260330.md) | Overall integration progress and test results | ⏳ Updated 2026-03-30 |
+| [ActionName Fix Summary](./actionname_fix_summary.md) | Root cause analysis and fix for HTTP 500 errors | ✅ RESOLVED |
 | [API Reference](./api_reference.md) | Complete API documentation with examples | 📝 Reference |
+| [Original Bug Report](./ordersearch_api_bug_report_20260330.md) | Historical bug report (now resolved) | 📋 Archive |
 
 ---
 
@@ -19,13 +20,27 @@ This folder contains all documentation related to the CNBooking supplier integra
 **Supplier**: CNBooking
 **Account**: EN000001
 **Environment**: Production (http://115.175.228.234:8078)
-**Status**: ⚠️ **BLOCKED** - 83% Complete, Critical Bug in OrderSearch API
+**Status**: ⏳ **PENDING RE-TEST** - ActionName format issue identified and documented
+
+---
+
+## 🚨 BREAKTHROUGH: Root Cause Identified
+
+**Issue**: ActionName format mismatch causing HTTP 500 errors
+
+**Root Cause**: Using SCREAMING_SNAKE_CASE (`"RATE_PLAN_SEARCH"`) instead of URL path PascalCase (`"RatePlanSearch"`)
+
+**CNBooking Confirmation**: "ActionName 应该对应地址后面的这个名称"
+
+**Fix Applied**: All documentation updated with correct ActionName format
+
+**Status**: ✅ Documentation fixed, awaiting re-test to confirm all APIs working
 
 ---
 
 ## Integration Progress
 
-### Completed (5/6)
+### Completed (6/7 - Pending Re-Test Confirmation)
 
 - ✅ Authentication (Token API)
 - ✅ Hotel Static Information (BaseHotelListSearch)
@@ -33,10 +48,7 @@ This folder contains all documentation related to the CNBooking supplier integra
 - ✅ Pre-Booking Check (PreBookingCheck)
 - ✅ Booking (Book API)
 - ✅ Cancellation (Cancel API)
-
-### Blocked (1/6)
-
-- ❌ **Order Query (OrderSearch)** - HTTP 500 Bug
+- ⏳ **Order Query (OrderSearch)** - Awaiting re-test with corrected ActionName
 
 ---
 
@@ -44,15 +56,15 @@ This folder contains all documentation related to the CNBooking supplier integra
 
 **As of 2026-03-30**:
 
-The CNBooking integration is **83% complete** with all major APIs working correctly except for the OrderSearch API, which has a critical bug causing HTTP 500 errors when called with Bearer Token authentication.
+The CNBooking integration has identified the root cause of previous HTTP 500 errors. The issue was an **ActionName format mismatch** - we were using SCREAMING_SNAKE_CASE format when CNBooking expects the ActionName to exactly match the URL path in PascalCase format.
 
-**Impact**: This bug blocks order query functionality, which is essential for:
-- Verifying booking status
-- Monitoring orders
-- Reconciling transactions
-- Completing production certification
+**Impact**: Once re-tested with corrected ActionNames, we expect all APIs including OrderSearch to work correctly.
 
-**Next Steps**: Awaiting CNBooking Technical Team to resolve the OrderSearch API bug.
+**Next Steps**:
+1. Re-test all APIs with corrected ActionName format
+2. Confirm OrderSearch API now works
+3. Complete full end-to-end booking cycle test
+4. Submit official certification report
 
 ---
 

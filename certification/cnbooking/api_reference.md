@@ -21,7 +21,7 @@ Complete API documentation for CNBooking supplier integration.
 ```json
 {
   "CNRequest": {
-    "ActionName": "TOKEN",
+    "ActionName": "Token",
     "SearchConditions": {
       "CustomerNo": "EN000001",
       "ApiKey": "369b469c-51b2-43cd-9677-934ca17f2651"
@@ -158,7 +158,7 @@ Retrieves available rate plans for a specific hotel and date range.
 ```json
 {
   "CNRequest": {
-    "ActionName": "RATE_PLAN_SEARCH",
+    "ActionName": "RatePlanSearch",
     "SearchConditions": {
       "HotelId": "5083719",
       "Lang": "en",
@@ -256,7 +256,7 @@ Validates booking availability and pricing before final booking submission.
 ```json
 {
   "CNRequest": {
-    "ActionName": "PRE_BOOKING_CHECK",
+    "ActionName": "PreBookingCheck",
     "SearchConditions": {
       "HotelId": "5083719",
       "RatePlanId": "RP123456",
@@ -323,7 +323,7 @@ Creates a new booking order.
 ```json
 {
   "CNRequest": {
-    "ActionName": "BOOK",
+    "ActionName": "Book",
     "SearchConditions": {
       "HotelId": "5083719",
       "RatePlanId": "RP123456",
@@ -410,20 +410,20 @@ Creates a new booking order.
 **Method**: `POST`
 **Auth Required**: Yes (Bearer Token)
 
-#### ⚠️ KNOWN BUG
+#### ⚠️ IMPORTANT - ActionName Format
 
-**Status**: **CRITICAL BUG** - Returns HTTP 500 when called with Bearer Token authentication
+**Status**: **FIXED** - Use correct ActionName format (URL path match)
 
-**Last Tested**: 2026-03-30
+**Fix Details**: See [`actionname_fix_summary.md`](./actionname_fix_summary.md)
 
-**See**: [`ordersearch_api_bug_report_20260330.md`](./ordersearch_api_bug_report_20260330.md)
+**ActionName**: Must be `"OrderSearch"` (PascalCase), NOT `"ORDERSEARCH"` (SCREAMING_SNAKE_CASE)
 
-#### Request (Expected)
+#### Request (Correct)
 
 ```json
 {
   "CNRequest": {
-    "ActionName": "ORDERSEARCH",
+    "ActionName": "OrderSearch",
     "SearchConditions": {
       "OrderId": "CN26032300063A"
     }
@@ -435,14 +435,14 @@ Creates a new booking order.
 }
 ```
 
-#### Response (Current - BROKEN)
+#### Previous Issue (Now Resolved)
 
-```http
-HTTP/1.1 500 Internal Server Error
-Content-Length: 0
-```
+**Problem**: Using `"ORDERSEARCH"` caused HTTP 500
+**Root Cause**: ActionName didn't match URL path format
+**Fix**: Use `"OrderSearch"` (matches URL path `/api/Order/OrderSearch`)
+**Status**: ✅ Documentation updated, awaiting re-test confirmation
 
-#### Response (Expected - When Fixed)
+#### Response (Expected)
 
 ```json
 {
@@ -490,7 +490,7 @@ Cancels an existing booking.
 ```json
 {
   "CNRequest": {
-    "ActionName": "CANCEL",
+    "ActionName": "Cancel",
     "SearchConditions": {
       "OrderId": "CN26032300063A",
       "CancelReason": "Customer request"

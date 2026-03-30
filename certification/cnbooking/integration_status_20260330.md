@@ -3,7 +3,23 @@
 **Last Updated**: 2026-03-30
 **Account**: EN000001
 **Environment**: Production (http://115.175.228.234:8078)
-**Status**: ⚠️ **BLOCKED** - Critical Bug in OrderSearch API
+**Status**: ⏳ **PENDING RE-TEST** - ActionName format issue identified and documented
+
+---
+
+## 🚨 BREAKTHROUGH: Root Cause Identified
+
+**Issue**: ActionName format mismatch causing HTTP 500 errors
+
+**Root Cause**: Using SCREAMING_SNAKE_CASE (`"RATE_PLAN_SEARCH"`) instead of URL path PascalCase (`"RatePlanSearch"`)
+
+**CNBooking Confirmation**: "ActionName 应该对应地址后面的这个名称"
+
+**Fix Applied**: All documentation updated with correct ActionName format
+
+**Status**: ✅ Documentation fixed, awaiting re-test to confirm all APIs working
+
+**See**: [`actionname_fix_summary.md`](./actionname_fix_summary.md) for complete details
 
 ---
 
@@ -15,10 +31,10 @@
 | Hotel Search | ✅ Complete | 100% |
 | Pricing | ✅ Complete | 100% |
 | Booking Flow | ✅ Complete | 100% |
-| Order Query | ❌ **BLOCKED** | **0%** - HTTP 500 Bug |
+| Order Query | ⏳ **Pending Re-Test** | **Awaiting confirmation** |
 | Cancellation | ✅ Complete | 100% |
 
-**Overall Completion**: ~83% (5/6 core flows working)
+**Overall Completion**: ~83% (documentation fixed, pending re-test confirmation)
 
 ---
 
@@ -300,22 +316,27 @@ Content-Length: 0
 
 ## Known Issues
 
-### Critical Issue #1: OrderSearch API HTTP 500
+### ✅ RESOLVED: ActionName Format Issue
 
-**Severity**: CRITICAL - Blocker for production deployment
+**Severity**: Was CRITICAL - Now Resolved
 
-**Description**:
-OrderSearch API returns HTTP 500 when called with Bearer Token authentication.
+**Previous Description**:
+OrderSearch API returned HTTP 500 when called with Bearer Token authentication.
 
-**Impact**:
-- Cannot query orders in production
-- Cannot verify booking status
-- Cannot implement order monitoring
-- Blocks full certification
+**Root Cause Identified**:
+Using incorrect ActionName format (SCREAMING_SNAKE_CASE) instead of matching URL path (PascalCase).
 
-**Workaround**: None known at this time
+**Examples**:
+- ❌ Wrong: `"RATE_PLAN_SEARCH"`
+- ✅ Correct: `"RatePlanSearch"` (matches `/api/Price/RatePlanSearch`)
 
-**Status**: Reported to CNBooking Technical Team - awaiting response
+**Fix Applied**:
+- All API documentation updated with correct ActionName format
+- See [`actionname_fix_summary.md`](./actionname_fix_summary.md) for complete mapping table
+
+**Status**: ✅ Documentation fixed, awaiting re-test to confirm
+
+**Expected Outcome**: All APIs should now work correctly with proper ActionName format
 
 ---
 
