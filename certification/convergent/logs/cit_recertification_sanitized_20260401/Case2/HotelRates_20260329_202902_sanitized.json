@@ -1,0 +1,244 @@
+{
+  "timestamp": "2026-03-29T20:29:02.838419+08:00",
+  "supplier": "Convergent",
+  "apiName": "HotelRates",
+  "url": "http://hapi.test.huizhi-intl.com/openapi/v3/hotelSearch",
+  "method": "POST",
+  "headers": {
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "username": "<redacted>",
+    "password": "<redacted>",
+    "hotelIds": [
+      16525
+    ],
+    "checkIn": "2026-05-10",
+    "checkOut": "2026-05-13",
+    "rooms": 2,
+    "adults": 2,
+    "agentCode": "<redacted>"
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Date": [
+        "Sun, 29 Mar 2026 12:29:02 GMT"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Connection": [
+        "keep-alive"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ]
+    },
+    "body": {
+      "checkOut": "2026-05-13",
+      "currency": "CNY",
+      "hotels": [
+        {
+          "hotelId": 16525,
+          "name": "广州技术部",
+          "nameEn": "King Parkview HotelKing",
+          "isFrontDesk": 4,
+          "rooms": [
+            {
+              "rates": [
+                {
+                  "boardCode": "BB",
+                  "boardCount": 6,
+                  "adults": 6,
+                  "nationalityCodes": [
+                    "CN"
+                  ],
+                  "isInstantConfirm": true,
+                  "dailyPrices": [
+                    {
+                      "date": "2026-05-10",
+                      "price": 425,
+                      "status": 1
+                    },
+                    {
+                      "date": "2026-05-11",
+                      "price": 425,
+                      "status": 1
+                    },
+                    {
+                      "date": "2026-05-12",
+                      "price": 425,
+                      "status": 1
+                    }
+                  ],
+                  "cancellationPolicies": [
+                    {
+                      "amount": 2550,
+                      "from": "2026-05-08T11:00:00.000+07:00"
+                    }
+                  ],
+                  "ratePlanCode": "2953722_4104383_6_1-6:P_2D13H0P_0",
+                  "nationalityRule": 1,
+                  "totalPrice": 2550
+                },
+                {
+                  "boardCount": 2,
+                  "nationalityRule": 1,
+                  "isInstantConfirm": true,
+                  "adults": 2,
+                  "nationalityCodes": [
+                    "CN"
+                  ],
+                  "totalPrice": 3000,
+                  "dailyPrices": [
+                    {
+                      "status": 1,
+                      "date": "2026-05-10",
+                      "price": 500
+                    },
+                    {
+                      "price": 500,
+                      "status": 1,
+                      "date": "2026-05-11"
+                    },
+                    {
+                      "status": 1,
+                      "date": "2026-05-12",
+                      "price": 500
+                    }
+                  ],
+                  "cancellationPolicies": [
+                    {
+                      "from": "2026-05-09T11:00:00.000+07:00",
+                      "amount": 3000
+                    }
+                  ],
+                  "ratePlanCode": "2953722_4104381_2_7-2_1D13H0P_0",
+                  "boardCode": "HBLD"
+                },
+                {
+                  "isInstantConfirm": true,
+                  "totalPrice": 12984,
+                  "dailyPrices": [
+                    {
+                      "status": 1,
+                      "date": "2026-05-10",
+                      "price": 2164
+                    },
+                    {
+                      "date": "2026-05-11",
+                      "price": 2164,
+                      "status": 1
+                    },
+                    {
+                      "date": "2026-05-12",
+                      "price": 2164,
+                      "status": 1
+                    }
+                  ],
+                  "cancellationPolicies": [
+                    {
+                      "amount": 12984,
+                      "from": "2026-05-09T01:00:00.000+07:00"
+                    }
+                  ],
+                  "ratePlanCode": "2953722_4100217_6_1-4_1D23H0P_0",
+                  "boardCode": "BB",
+                  "boardCount": 4,
+                  "adults": 6
+                }
+              ],
+              "roomId": "2953722",
+              "name": "标准双床房",
+              "nameEn": "Standard Twin Room"
+            },
+            {
+              "roomId": "2962771",
+              "name": "豪华园景房",
+              "nameEn": "Deluxe Garden View Room",
+              "rates": [
+                {
+                  "boardCount": 3,
+                  "adults": 3,
+                  "totalPrice": 3000,
+                  "cancellationPolicies": [
+                    {
+                      "amount": 3000,
+                      "from": "2026-05-10T10:00:00.000+07:00"
+                    }
+                  ],
+                  "boardCode": "AI",
+                  "nationalityRule": 1,
+                  "nationalityCodes": [
+                    "CN"
+                  ],
+                  "isInstantConfirm": true,
+                  "dailyPrices": [
+                    {
+                      "date": "2026-05-10",
+                      "price": 500,
+                      "status": 1
+                    },
+                    {
+                      "date": "2026-05-11",
+                      "price": 500,
+                      "status": 1
+                    },
+                    {
+                      "date": "2026-05-12",
+                      "price": 500,
+                      "status": 1
+                    }
+                  ],
+                  "ratePlanCode": "2962771_29663091_3_8-8_14H0P_0"
+                }
+              ]
+            },
+            {
+              "rates": [
+                {
+                  "ratePlanCode": "18035576_29664727_2_0-0_NC_0",
+                  "boardCode": "RO",
+                  "boardCount": 0,
+                  "adults": 2,
+                  "isInstantConfirm": true,
+                  "totalPrice": 3000,
+                  "dailyPrices": [
+                    {
+                      "date": "2026-05-10",
+                      "price": 500,
+                      "status": 1
+                    },
+                    {
+                      "date": "2026-05-11",
+                      "price": 500,
+                      "status": 1
+                    },
+                    {
+                      "price": 500,
+                      "status": 1,
+                      "date": "2026-05-12"
+                    }
+                  ]
+                }
+              ],
+              "roomId": "18035576",
+              "name": "国内测试1",
+              "nameEn": "test01"
+            }
+          ]
+        }
+      ],
+      "code": 200,
+      "message": "Success",
+      "checkIn": "2026-05-10"
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 44596000
+  },
+  "logId": ""
+}
