@@ -3,57 +3,51 @@
 **Issue**: [#48](https://github.com/hotelbyte-com/docs/issues/48)  
 **Supplier**: Convergent International Travel (CIT / HUI)  
 **Report Date**: April 1, 2026  
-**Status**: ✅ Recertification evidence ready + ✅ Book parameter update completed
+**Status**: ✅ Recertification rerun completed with new Book fields in raw logs
 
-## 1) Certification Result Baseline (Completed)
+## 1) Correction Update (April 1, 2026)
 
-The recertification execution on **March 29, 2026** completed both supplier-required scenarios successfully:
+A new rerun was executed on **April 1, 2026** via UAT proxy to provide fresh evidence after the Book payload update.
+
+This rerun explicitly includes the new fields in Book request logs:
+- `guests[].roomNo`
+- `orderRoomDetail`
+
+## 2) Rerun Results
 
 | Case | Scenario | Order ID | Result |
 |---|---|---:|---|
-| Case 1 | 1 room, 1 night, 2 adults | 6345771 | PASS (Book + QueryOrder + Cancel) |
-| Case 2 | 2 rooms, 3 nights, 2 adults | 6345772 | PASS (Book + QueryOrder + Cancel) |
+| Case 1 | 1 room, 1 night, 2 adults | 6345929 | PASS |
+| Case 2 | 2 rooms, 3 nights, 2 adults | 6345930 | PASS |
 
 Flow covered for both cases:
 `HotelRates -> CheckAvail -> Book -> QueryOrder -> Cancel`
 
-## 2) Latest Delta Completed (Book Parameters)
+## 3) Book Parameter Delivery
 
-Per Convergent booking doc update (received March 30, 2026), HotelByte completed Book request enhancement on **March 31, 2026**:
+Book payload enhancement was delivered on **March 31, 2026**:
+- Commit `4ce313f4`: support `roomNo` and `orderRoomDetail`
+- Included in commit `2eae11aa`
 
-- Commit `4ce313f4`: `convergent: support roomNo and orderRoomDetail per 2026-03-30 doc`
-- Included in commit `2eae11aa` on March 31, 2026
-
-Implemented items:
-1. Added `guests[].roomNo` (mapped from `RoomIndex`, 1-based)
-2. Added `orderRoomDetail` echo block in Book request
-3. Kept CheckAvail -> Book session propagation for consistency fields
-
-## 3) Evidence Package (Sanitized)
+## 4) Evidence Package (Sanitized)
 
 The attached logs are sanitized to remove credentials and internal-only sensitive fields.
 
 Directory:
-- `logs/cit_recertification_sanitized_20260401/`
+- `logs/cit_recertification_sanitized_20260401_uat_rerun/`
 
 Case 1 logs:
-- `Case1/HotelRates_20260329_202901_sanitized.json`
-- `Case1/CheckAvail_20260329_202901_sanitized.json`
-- `Case1/Book_20260329_202901_sanitized.json`
-- `Case1/QueryOrder_20260329_202901_sanitized.json`
-- `Case1/Cancel_20260329_202901_sanitized.json`
+- `Case1/Book_20260401_160512_sanitized.json` (contains `roomNo` + `orderRoomDetail`)
 
 Case 2 logs:
-- `Case2/HotelRates_20260329_202902_sanitized.json`
-- `Case2/CheckAvail_20260329_202903_sanitized.json`
-- `Case2/Book_20260329_202903_sanitized.json`
-- `Case2/QueryOrder_20260329_202903_sanitized.json`
-- `Case2/Cancel_20260329_202903_sanitized.json`
+- `Case2/Book_20260401_160517_sanitized.json` (contains `roomNo` + `orderRoomDetail`)
 
-## 4) Supplier Verification Request
+Plus full chain logs for both cases in the same directory.
 
-Please verify that the latest Book payload requirements are now satisfied, especially:
-- `guests[].roomNo`
-- `orderRoomDetail`
+## 5) Supplier Verification Request
 
-If your validation side requires a fresh live replay package generated after March 31 code update, please confirm and we will rerun immediately in the target environment and provide a new sequential log bundle.
+Please verify the latest Book payload fields in the rerun evidence:
+1. `guests[].roomNo`
+2. `orderRoomDetail`
+
+If any additional field-level format validation is needed, please specify the exact expected shape and we will rerun immediately.
