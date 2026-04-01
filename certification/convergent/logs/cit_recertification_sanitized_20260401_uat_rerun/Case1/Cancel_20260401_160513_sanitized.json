@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-04-01T16:05:13.068979+08:00",
+  "supplier": "Convergent",
+  "apiName": "Cancel",
+  "url": "http://hapi.test.huizhi-intl.com/openapi/v3/cancelbooking",
+  "method": "POST",
+  "headers": {
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "agentCode": "<redacted>",
+    "username": "<redacted>",
+    "password": "<redacted>",
+    "agentOrderId": "AGENT-1775030711"
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Vary": [
+        "Accept-Encoding"
+      ],
+      "Date": [
+        "Wed, 01 Apr 2026 08:05:13 GMT"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Connection": [
+        "keep-alive"
+      ]
+    },
+    "body": {
+      "agentOrderId": "AGENT-1775030711",
+      "orderId": 6345929,
+      "cancellationFees": 0,
+      "code": 200,
+      "message": "Success"
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 724000792
+  },
+  "logId": ""
+}
