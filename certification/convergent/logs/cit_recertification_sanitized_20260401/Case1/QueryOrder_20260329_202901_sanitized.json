@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-03-29T20:29:01.504655+08:00",
+  "supplier": "Convergent",
+  "apiName": "QueryOrder",
+  "url": "http://hapi.test.huizhi-intl.com/openapi/v3/searchbooking",
+  "method": "POST",
+  "headers": {
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "username": "<redacted>",
+    "password": "<redacted>",
+    "agentOrderId": "AGENT-1774787341",
+    "agentCode": "<redacted>"
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Connection": [
+        "keep-alive"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ],
+      "Date": [
+        "Sun, 29 Mar 2026 12:29:01 GMT"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ]
+    },
+    "body": {
+      "ratePlanCode": "2953722_4104381_2_7-2_1D13H0P_0",
+      "checkOut": "2026-05-04",
+      "boardCode": "HBLD",
+      "totalPrice": 500,
+      "message": "Success",
+      "agentOrderId": "AGENT-1774787341",
+      "orderId": 6345771,
+      "orderStatus": 1,
+      "checkIn": "2026-05-03",
+      "boardCount": 2,
+      "currency": "CNY",
+      "cancellationPolicies": [
+        {
+          "amount": 500,
+          "from": "2026-05-02T11:00:00.000+07:00"
+        }
+      ],
+      "adults": 2,
+      "hotelId": 16525,
+      "roomId": "2953722",
+      "rooms": 1,
+      "code": 200
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 49686625
+  },
+  "logId": ""
+}
