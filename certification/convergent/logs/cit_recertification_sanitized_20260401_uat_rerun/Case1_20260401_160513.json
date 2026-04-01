@@ -1,0 +1,26 @@
+{
+  "caseName": "Case1",
+  "timestamp": "2026-04-01T16:05:04.894736+08:00",
+  "checkIn": 20260506,
+  "checkOut": 20260507,
+  "occupancies": [
+    {
+      "adultCount": 2
+    }
+  ],
+  "steps": [
+    {
+      "step": "Book",
+      "status": "SUCCESS",
+      "referenceNo": "AGENT-1775030711"
+    },
+    {
+      "step": "QueryOrder",
+      "status": "SUCCESS"
+    },
+    {
+      "step": "Cancel",
+      "status": "SUCCESS"
+    }
+  ]
+}
