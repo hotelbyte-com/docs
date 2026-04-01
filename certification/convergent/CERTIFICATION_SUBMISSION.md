@@ -1,48 +1,34 @@
-# Convergent International Travel - Certification Re-Submission (Latest)
+# Convergent International Travel - Certification Re-Submission (Corrected)
 
 Hi CIT Team,
 
-We are re-submitting the latest Convergent certification package for issue [#48](https://github.com/hotelbyte-com/docs/issues/48).
+We are submitting a corrected latest package for issue [#48](https://github.com/hotelbyte-com/docs/issues/48).
 
-## Scope
+## Correction
 
-- Supplier: Convergent International Travel
-- Verification scenarios: 2 (supplier-required)
-- Environment: `http://hapi.test.huizhi-intl.com`
-- Covered chain per scenario:
-  - Search (`HotelRates`)
-  - Pre-book (`CheckAvail`)
-  - Booking (`Book`)
-  - Search booking (`QueryOrder`)
-  - Cancel (`Cancel`)
+You are right that earlier logs did not show the new Book fields.  
+We reran certification on **April 1, 2026** and now provide fresh raw logs that include:
+- `guests[].roomNo`
+- `orderRoomDetail`
 
-## Scenario Summary
+## Rerun Scenario Results
 
-| Scenario | Inputs | Output |
-|---|---|---|
-| Case 1 | 1 room, 1 night, 2 adults | PASS, Order ID `6345771`, Cancel success |
-| Case 2 | 2 rooms, 3 nights, 2 adults | PASS, Order ID `6345772`, Cancel success |
+| Scenario | Inputs | Order ID | Result |
+|---|---|---:|---|
+| Case 1 | 1 room, 1 night, 2 adults | 6345929 | PASS |
+| Case 2 | 2 rooms, 3 nights, 2 adults | 6345930 | PASS |
 
-## Latest Update Completed
+## Delivery References
 
-The latest Book parameter enhancement is completed:
-
-- `guests[].roomNo` added
-- `orderRoomDetail` added
-- Delivery commit: `4ce313f4` (March 31, 2026)
-- Included in: `2eae11aa` (March 31, 2026)
+- Commit `4ce313f4` (March 31, 2026): add Book fields `roomNo`, `orderRoomDetail`
+- Commit `2eae11aa` (March 31, 2026): includes the above change
 
 ## Evidence
 
-- Summary report: `CIT_RECERTIFICATION_SUMMARY.md`
-- Sanitized full logs (sequential, request + response):
-  - `logs/cit_recertification_sanitized_20260401/Case1/`
-  - `logs/cit_recertification_sanitized_20260401/Case2/`
+- Summary: `CIT_RECERTIFICATION_SUMMARY.md`
+- Sanitized rerun logs:
+  - `logs/cit_recertification_sanitized_20260401_uat_rerun/Case1/Book_20260401_160512_sanitized.json`
+  - `logs/cit_recertification_sanitized_20260401_uat_rerun/Case2/Book_20260401_160517_sanitized.json`
+  - full chain logs in same directory
 
-The attached logs are sanitized to remove credentials and internal-only sensitive fields.
-
-## Request
-
-Please review this latest package and verify that the new Book parameters are accepted (`roomNo` and `orderRoomDetail`).
-
-If you need a fresh post-change replay log generated in your preferred test window, we can execute and submit immediately.
+Please verify the two new Book fields from these rerun logs.
