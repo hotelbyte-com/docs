@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-04-01T16:05:16.660375+08:00",
+  "supplier": "Convergent",
+  "apiName": "Book",
+  "url": "http://hapi.test.huizhi-intl.com/openapi/v3/booking",
+  "method": "POST",
+  "headers": {
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "contactPhone": "+0 13800138000",
+    "contactEmail": "test@example.com",
+    "agentCode": "<redacted>",
+    "agentOrderId": "AGENT-1775030716",
+    "checkIn": "2026-05-13",
+    "guests": [
+      {
+        "firstName": "Test1",
+        "lastName": "Guest",
+        "roomNo": "1"
+      },
+      {
+        "firstName": "Test2",
+        "lastName": "Guest",
+        "roomNo": "2"
+      }
+    ],
+    "nationality": "CN",
+    "orderRoomDetail": {
+      "ratePlanName": "",
+      "broadCode": "BB",
+      "broadCount": 6,
+      "bedType": "",
+      "hotelName": "广州技术部",
+      "roomName": "标准双床房"
+    },
+    "username": "<redacted>",
+    "password": "<redacted>",
+    "totalPrice": 2550,
+    "specialRequests": "",
+    "bookingCode": "91818fc2c8f44a5bbe6dc8530807598a",
+    "roomId": "2953722",
+    "checkOut": "2026-05-16",
+    "currency": "CNY",
+    "contactName": "Test User",
+    "hotelId": 16525,
+    "ratePlanCode": "2953722_4104383_6_1-6:P_2D13H0P_0",
+    "adults": 2,
+    "childrenAges": null,
+    "rooms": 2,
+    "dailyPrices": [
+      {
+        "date": "2026-05-13",
+        "price": 425,
+        "status": 1
+      },
+      {
+        "date": "2026-05-14",
+        "price": 425,
+        "status": 1
+      },
+      {
+        "date": "2026-05-15",
+        "price": 425,
+        "status": 1
+      }
+    ]
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Vary": [
+        "Accept-Encoding"
+      ],
+      "Date": [
+        "Wed, 01 Apr 2026 08:05:17 GMT"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Connection": [
+        "keep-alive"
+      ]
+    },
+    "body": {
+      "code": 200,
+      "message": "Booking has been created successfully",
+      "agentOrderId": "AGENT-1775030716",
+      "orderId": 6345930,
+      "orderStatus": 1
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 565002500
+  },
+  "logId": ""
+}
