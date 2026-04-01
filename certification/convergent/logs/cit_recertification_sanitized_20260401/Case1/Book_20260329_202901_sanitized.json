@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-03-29T20:29:01.366841+08:00",
+  "supplier": "Convergent",
+  "apiName": "Book",
+  "url": "http://hapi.test.huizhi-intl.com/openapi/v3/booking",
+  "method": "POST",
+  "headers": {
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "agentCode": "<redacted>",
+    "username": "<redacted>",
+    "password": "<redacted>",
+    "bookingCode": "e3799d58ee0349419ddc761783ace7bc",
+    "roomId": "2953722",
+    "nationality": "CN",
+    "agentOrderId": "AGENT-1774787341",
+    "hotelId": 16525,
+    "checkIn": "2026-05-03",
+    "checkOut": "2026-05-04",
+    "adults": 1,
+    "childrenAges": null,
+    "contactPhone": "+0 13800138000",
+    "contactEmail": "test@example.com",
+    "ratePlanCode": "2953722_4104381_2_7-2_1D13H0P_0",
+    "guests": [
+      {
+        "firstName": "Test1",
+        "lastName": "Guest"
+      }
+    ],
+    "contactName": "Test User",
+    "specialRequests": "",
+    "rooms": 1,
+    "totalPrice": 500,
+    "currency": "CNY",
+    "dailyPrices": [
+      {
+        "date": "2026-05-03",
+        "price": 500,
+        "status": 1
+      }
+    ]
+  },
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Connection": [
+        "keep-alive"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ],
+      "Date": [
+        "Sun, 29 Mar 2026 12:29:01 GMT"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ]
+    },
+    "body": {
+      "message": "Booking has been created successfully",
+      "agentOrderId": "AGENT-1774787341",
+      "orderId": 6345771,
+      "orderStatus": 1,
+      "code": 200
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 136197000
+  },
+  "logId": ""
+}
