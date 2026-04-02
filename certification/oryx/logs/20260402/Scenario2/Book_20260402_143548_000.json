@@ -1,0 +1,281 @@
+{
+  "timestamp": "2026-04-02T14:35:48.791724+08:00",
+  "supplier": "Arabian Oryx",
+  "apiName": "Book",
+  "url": "http://uat-apiv2.giinfotech.ae/api/v2/hotel/Book",
+  "method": "POST",
+  "headers": {
+    "Apikey": [
+      "***REDACTED***"
+    ],
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ]
+  },
+  "queryParams": {},
+  "requestBody": {
+    "Currency": "AED",
+    "Nationality": "AE",
+    "CustomerRefNumber": "TEST1775111748000",
+    "Rooms": {
+      "Room": [
+        {
+          "RoomIdentifier": 1,
+          "Adult": 2,
+          "Children": {
+            "Count": 1,
+            "ChildAge": [
+              {
+                "Identifier": 1,
+                "Text": "9"
+              }
+            ]
+          },
+          "RateKey": "398248600PO",
+          "Guests": {
+            "Guest": [
+              {
+                "IsLeadPAX": true,
+                "Type": "Adult",
+                "Age": 30,
+                "Title": {
+                  "Text": "Mr",
+                  "Code": ""
+                },
+                "FirstName": "Room1",
+                "LastName": "Adult1"
+              },
+              {
+                "Title": {
+                  "Code": "",
+                  "Text": "Mr"
+                },
+                "FirstName": "Room1",
+                "LastName": "Adult2",
+                "IsLeadPAX": false,
+                "Type": "Adult",
+                "Age": 30
+              },
+              {
+                "Title": {
+                  "Code": "",
+                  "Text": "Master"
+                },
+                "FirstName": "Room1",
+                "LastName": "Child1",
+                "IsLeadPAX": false,
+                "Type": "Child",
+                "Age": 9
+              }
+            ]
+          },
+          "Price": {
+            "Net": 244.21,
+            "Tax": 47.94,
+            "Gross": 196.27
+          }
+        },
+        {
+          "RoomIdentifier": 2,
+          "Adult": 1,
+          "Children": {
+            "Count": 2,
+            "ChildAge": [
+              {
+                "Identifier": 1,
+                "Text": "4"
+              },
+              {
+                "Identifier": 2,
+                "Text": "12"
+              }
+            ]
+          },
+          "RateKey": "398248600PO",
+          "Guests": {
+            "Guest": [
+              {
+                "Age": 30,
+                "Title": {
+                  "Code": "",
+                  "Text": "Mr"
+                },
+                "FirstName": "Room2",
+                "LastName": "Adult1",
+                "IsLeadPAX": true,
+                "Type": "Adult"
+              },
+              {
+                "LastName": "Child1",
+                "IsLeadPAX": false,
+                "Type": "Child",
+                "Age": 4,
+                "Title": {
+                  "Code": "",
+                  "Text": "Master"
+                },
+                "FirstName": "Room2"
+              },
+              {
+                "LastName": "Child2",
+                "IsLeadPAX": false,
+                "Type": "Child",
+                "Age": 12,
+                "Title": {
+                  "Code": "",
+                  "Text": "Master"
+                },
+                "FirstName": "Room2"
+              }
+            ]
+          },
+          "Price": {
+            "Tax": 47.94,
+            "Gross": 196.27,
+            "Net": 244.21
+          }
+        }
+      ]
+    },
+    "HotelCode": "433912",
+    "DestinationCode": "160-0",
+    "GroupCode": 175,
+    "SessionId": "fead43cb940f4e7cad81cf9a314ac8d7",
+    "CountryCode": "AE"
+  },
+  "curlCommand": "curl -X POST -H 'Apikey: ***REDACTED***' -H 'Content-Type: application/json; charset=utf-8' 'http://uat-apiv2.giinfotech.ae/api/v2/hotel/Book' -d '{\"SessionId\":\"fead43cb940f4e7cad81cf9a314ac8d7\",\"HotelCode\":\"433912\",\"DestinationCode\":\"160-0\",\"CountryCode\":\"AE\",\"Currency\":\"AED\",\"Nationality\":\"AE\",\"CustomerRefNumber\":\"TEST1775111748000\",\"GroupCode\":175,\"Rooms\":{\"Room\":[{\"RoomIdentifier\":1,\"Adult\":2,\"Children\":{\"Count\":1,\"ChildAge\":[{\"Identifier\":1,\"Text\":\"9\"}]},\"RateKey\":\"398248600PO\",\"Guests\":{\"Guest\":[{\"Title\":{\"Code\":\"\",\"Text\":\"Mr\"},\"FirstName\":\"Room1\",\"LastName\":\"Adult1\",\"IsLeadPAX\":true,\"Type\":\"Adult\",\"Age\":30},{\"Title\":{\"Code\":\"\",\"Text\":\"Mr\"},\"FirstName\":\"Room1\",\"LastName\":\"Adult2\",\"IsLeadPAX\":false,\"Type\":\"Adult\",\"Age\":30},{\"Title\":{\"Code\":\"\",\"Text\":\"Master\"},\"FirstName\":\"Room1\",\"LastName\":\"Child1\",\"IsLeadPAX\":false,\"Type\":\"Child\",\"Age\":9}]},\"Price\":{\"Gross\":196.27,\"Net\":244.21,\"Tax\":47.94}},{\"RoomIdentifier\":2,\"Adult\":1,\"Children\":{\"Count\":2,\"ChildAge\":[{\"Identifier\":1,\"Text\":\"4\"},{\"Identifier\":2,\"Text\":\"12\"}]},\"RateKey\":\"398248600PO\",\"Guests\":{\"Guest\":[{\"Title\":{\"Code\":\"\",\"Text\":\"Mr\"},\"FirstName\":\"Room2\",\"LastName\":\"Adult1\",\"IsLeadPAX\":true,\"Type\":\"Adult\",\"Age\":30},{\"Title\":{\"Code\":\"\",\"Text\":\"Master\"},\"FirstName\":\"Room2\",\"LastName\":\"Child1\",\"IsLeadPAX\":false,\"Type\":\"Child\",\"Age\":4},{\"Title\":{\"Code\":\"\",\"Text\":\"Master\"},\"FirstName\":\"Room2\",\"LastName\":\"Child2\",\"IsLeadPAX\":false,\"Type\":\"Child\",\"Age\":12}]},\"Price\":{\"Gross\":196.27,\"Net\":244.21,\"Tax\":47.94}}]}}'",
+  "response": {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Server": [
+        "Microsoft-IIS/10.0"
+      ],
+      "X-Powered-By": [
+        "ASP.NET"
+      ],
+      "Date": [
+        "Thu, 02 Apr 2026 06:36:12 GMT"
+      ]
+    },
+    "body": {
+      "supplierGroupCode": 135,
+      "hotelCode": "433912",
+      "spHotelCode": null,
+      "errorInfo": null,
+      "bookingCreation": "02042026 10:35",
+      "adsConfirmationNumber": "0F09F288D",
+      "bookingConfirmationId": "0F09F288D",
+      "customerRefNumber": "TEST1775111748000",
+      "supplierCurrency": "AED",
+      "status": "2",
+      "hotelConfirmationNumber": null,
+      "invoiceCompany": {
+        "code": "CH1",
+        "name": "",
+        "registrationNumber": "CHE807309023"
+      },
+      "generalInfo": {
+        "apiKey": "***REDACTED***",
+        "customerCode": null,
+        "sessionId": "fead43cb940f4e7cad81cf9a314ac8d7",
+        "timeStamp": "2026-04-02T10:35:48Z"
+      },
+      "supplierConfirmationNumber": "AOXDMY620",
+      "supplierHotelCode": null,
+      "currency": null,
+      "rooms": [
+        {
+          "mealDescription": null,
+          "rateType": null,
+          "minStay": null,
+          "bookingId": null,
+          "adsConfirmationNumber": null,
+          "supplierConfirmationNumber": null,
+          "roomIdentifier": 1,
+          "guests": null,
+          "roomCombinationId": null,
+          "groupCode": null,
+          "bedTypes": null,
+          "spHotelCode": null,
+          "roomTypeCode": null,
+          "sMeal": null,
+          "supplierGroupCode": null,
+          "isCancelationPolicyAvailble": null,
+          "price": null,
+          "remarks": null,
+          "children": null,
+          "marriageIdentifier": null,
+          "rateKey": "398248600P",
+          "reprice": null,
+          "policies": null,
+          "roomConfirmationNumber": null,
+          "roomIndex": null,
+          "isCache": null,
+          "extraBedCount": null,
+          "mealCode": null,
+          "meal": null,
+          "isPriceBreakupAvailable": null,
+          "hotelConfirmationNumber": "AOXDMY620",
+          "hotelCode": null,
+          "roomName": null,
+          "contractType": null,
+          "status": "Confirmed",
+          "group": null,
+          "inclusions": null,
+          "shortCode": null,
+          "adult": 0
+        },
+        {
+          "supplierConfirmationNumber": null,
+          "roomConfirmationNumber": null,
+          "adult": 0,
+          "children": null,
+          "group": null,
+          "roomIdentifier": 2,
+          "spHotelCode": null,
+          "roomName": null,
+          "mealCode": null,
+          "inclusions": null,
+          "roomCombinationId": null,
+          "shortCode": null,
+          "price": null,
+          "meal": null,
+          "rateType": null,
+          "rateKey": "398248600P",
+          "minStay": null,
+          "reprice": null,
+          "policies": null,
+          "marriageIdentifier": null,
+          "roomTypeCode": null,
+          "supplierGroupCode": null,
+          "remarks": null,
+          "guests": null,
+          "mealDescription": null,
+          "status": "Confirmed",
+          "groupCode": null,
+          "isPriceBreakupAvailable": null,
+          "hotelCode": null,
+          "contractType": null,
+          "bedTypes": null,
+          "adsConfirmationNumber": null,
+          "hotelConfirmationNumber": "AOXDMY620",
+          "roomIndex": null,
+          "sMeal": null,
+          "isCache": null,
+          "isCancelationPolicyAvailble": null,
+          "extraBedCount": null,
+          "bookingId": null
+        }
+      ],
+      "accounts": null,
+      "tassProBookingNo": "672593",
+      "groupCode": 175
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 24684479125
+  },
+  "logId": ""
+}

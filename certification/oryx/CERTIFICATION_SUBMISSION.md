@@ -1,64 +1,64 @@
 # Arabian Oryx (TassPro) Integration Certification Logs
 
-**Submission Date**: March 30, 2026  
+**Submission Date**: April 2, 2026  
 **Environment**: DEV via UAT proxy  
-**Scope**: Full certification rerun after fixing multi-room booking support
+**Scope**: Certification rerun with corrected Case 2 occupancy
 
 ---
 
 ## Executive Summary
 
-We reran the Arabian Oryx (TassPro) certification after fixing our multi-room booking implementation.
-
-Both required scenarios now pass end-to-end:
+We reran the Arabian Oryx (TassPro) certification and both required scenarios passed end-to-end.
 
 | Test Case | Status | Steps Completed | Order Reference |
 |-----------|--------|----------------|-----------------|
-| Scenario 1: Single Room | ✅ **PASSED** | 6/6 | `C82F12F00` |
-| Scenario 2: Multi-Room | ✅ **PASSED** | 6/6 | `F60493D35` |
+| Scenario 1: Single Room | ✅ **PASSED** | 6/6 | `220737BA3` |
+| Scenario 2: Multi-Room | ✅ **PASSED** | 6/6 | `0F09F288D` |
 
-All test bookings were queried successfully and then cancelled successfully.
+All test bookings were queried successfully and cancelled successfully.
 
 ---
 
 ## Scenario 1: Single Room
 
-- **Hotel**: `San Marino Hotel` (`50225`)
-- **Check-in / Check-out**: `2026-04-29` → `2026-05-01`
+- **Hotel**: `Sun And Sands Downtown Hotel` (`245074`)
+- **Check-in / Check-out**: `2026-05-02` → `2026-05-04`
 - **Occupancy**: `1 room × 2 adults`
-- **ADSConfirmationNumber**: `C82F12F00`
-- **SupplierConfirmationNumber**: `AOXDMY253`
+- **ADSConfirmationNumber**: `220737BA3`
+- **SupplierConfirmationNumber**: `AOXDMY119`
 
 ### Public Log Files
-- `certification/oryx/logs/20260330/Scenario1/HotelList_20260330_192613_000.json`
-- `certification/oryx/logs/20260330/Scenario1/HotelRates_20260330_192628_000.json`
-- `certification/oryx/logs/20260330/Scenario1/CheckAvail_20260330_192630_000.json`
-- `certification/oryx/logs/20260330/Scenario1/Book_20260330_192633_000.json`
-- `certification/oryx/logs/20260330/Scenario1/QueryOrder_20260330_192656_000.json`
-- `certification/oryx/logs/20260330/Scenario1/Cancel_20260330_192657_000.json`
+- `certification/oryx/logs/20260402/Scenario1/HotelList_20260402_143412_000.json`
+- `certification/oryx/logs/20260402/Scenario1/HotelRates_20260402_143434_000.json`
+- `certification/oryx/logs/20260402/Scenario1/CheckAvail_20260402_143436_000.json`
+- `certification/oryx/logs/20260402/Scenario1/Book_20260402_143440_000.json`
+- `certification/oryx/logs/20260402/Scenario1/QueryOrder_20260402_143506_000.json`
+- `certification/oryx/logs/20260402/Scenario1/Cancel_20260402_143507_000.json`
 
 ---
 
 ## Scenario 2: Multi-Room
 
-- **Hotel**: `San Marino Hotel` (`50225`)
-- **Check-in / Check-out**: `2026-04-29` → `2026-05-01`
-- **Occupancy**: `2 rooms × 2 adults`
-- **ADSConfirmationNumber**: `F60493D35`
-- **SupplierConfirmationNumber**: `AOXDMY815`
+- **Hotel**: `ibis Styles Dubai Jumeira Hotel` (`433912`)
+- **Check-in / Check-out**: `2026-05-02` → `2026-05-04`
+- **Occupancy**:
+  - `Room 1: 2 Adults + 1 Child (9 years)`
+  - `Room 2: 1 Adult + 2 Children (4, 12 years)`
+- **ADSConfirmationNumber**: `0F09F288D`
+- **SupplierConfirmationNumber**: `AOXDMY620`
 
 ### Public Log Files
-- `certification/oryx/logs/20260330/Scenario2/HotelList_20260330_192659_000.json`
-- `certification/oryx/logs/20260330/Scenario2/HotelRates_20260330_192732_000.json`
-- `certification/oryx/logs/20260330/Scenario2/CheckAvail_20260330_192743_000.json`
-- `certification/oryx/logs/20260330/Scenario2/Book_20260330_192737_000.json`
-- `certification/oryx/logs/20260330/Scenario2/QueryOrder_20260330_192800_000.json`
-- `certification/oryx/logs/20260330/Scenario2/Cancel_20260330_192801_000.json`
+- `certification/oryx/logs/20260402/Scenario2/HotelList_20260402_143509_000.json`
+- `certification/oryx/logs/20260402/Scenario2/HotelRates_20260402_143536_000.json`
+- `certification/oryx/logs/20260402/Scenario2/CheckAvail_20260402_143544_000.json`
+- `certification/oryx/logs/20260402/Scenario2/Book_20260402_143548_000.json`
+- `certification/oryx/logs/20260402/Scenario2/QueryOrder_20260402_143613_000.json`
+- `certification/oryx/logs/20260402/Scenario2/Cancel_20260402_143614_000.json`
 
 ---
 
 ## Certification Reports
 
-- `certification/oryx/certification_reports/certification_report_20260330_192657.json`
-- `certification/oryx/certification_reports/certification_report_20260330_192801.json`
-- `certification/oryx/certification_reports/certification_summary_20260330_192803.json`
+- `certification/oryx/certification_reports/certification_report_20260402_143507.json`
+- `certification/oryx/certification_reports/certification_report_20260402_143614.json`
+- `certification/oryx/certification_reports/certification_summary_20260402_143616.json`
