@@ -1,0 +1,52 @@
+{
+  "apiName": "Cancel",
+  "curlCommand": "REDACTED",
+  "headers": {
+    "App-Key": "REDACTED",
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "Signature": "REDACTED",
+    "Timestamp": [
+      "1775134204799"
+    ]
+  },
+  "logId": "",
+  "method": "POST",
+  "queryParams": {},
+  "requestBody": {
+    "agentCode": "TTDB2B",
+    "agentOrderId": "AGENT1775134204444083000",
+    "password": "REDACTED",
+    "username": "TTDB2B"
+  },
+  "response": {
+    "body": {
+      "agentOrderId": "AGENT1775134204444083000",
+      "cancellationFees": 0,
+      "code": 200,
+      "message": "Success",
+      "orderId": 8825150
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 151318125,
+    "headers": {
+      "Connection": [
+        "keep-alive"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Date": [
+        "Thu, 02 Apr 2026 12:50:04 GMT"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ]
+    },
+    "statusCode": 200
+  },
+  "supplier": "Convergent",
+  "timestamp": "2026-04-02T20:50:04.80051+08:00",
+  "url": "http://hapi.huizhi-intl.com/openapi/v3/cancelbooking"
+}

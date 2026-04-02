@@ -1,0 +1,148 @@
+{
+  "apiName": "HotelRates",
+  "curlCommand": "REDACTED",
+  "headers": {
+    "App-Key": "REDACTED",
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "Signature": "REDACTED",
+    "Timestamp": [
+      "1775133429676"
+    ]
+  },
+  "logId": "",
+  "method": "POST",
+  "queryParams": {},
+  "requestBody": {
+    "adults": 2,
+    "agentCode": "TTDB2B",
+    "checkIn": "2026-05-02",
+    "checkOut": "2026-05-03",
+    "hotelIds": [
+      449003
+    ],
+    "password": "REDACTED",
+    "rooms": 1,
+    "username": "TTDB2B"
+  },
+  "response": {
+    "body": {
+      "checkIn": "2026-05-02",
+      "checkOut": "2026-05-03",
+      "code": 200,
+      "currency": "USD",
+      "hotels": [
+        {
+          "hotelId": 449003,
+          "isFrontDesk": 0,
+          "name": "汇智专属酒店(测试)123123",
+          "nameEn": "Online test123123",
+          "rooms": [
+            {
+              "name": "商务房（内供）",
+              "nameEn": "Business Room",
+              "rates": [
+                {
+                  "adults": 2,
+                  "boardCode": "BB",
+                  "boardCount": 2,
+                  "dailyPrices": [
+                    {
+                      "date": "2026-05-02",
+                      "price": 54.61,
+                      "status": 1
+                    }
+                  ],
+                  "isInstantConfirm": true,
+                  "ratePlanCode": "3107332_3537994_2_1-2_NC_0",
+                  "totalPrice": 54.61
+                }
+              ],
+              "roomId": "3107332"
+            },
+            {
+              "name": "标间（内供）",
+              "nameEn": "Standard Room",
+              "rates": [
+                {
+                  "adults": 2,
+                  "boardCode": "RO",
+                  "boardCount": 0,
+                  "dailyPrices": [
+                    {
+                      "date": "2026-05-02",
+                      "price": 36.36,
+                      "status": 1
+                    }
+                  ],
+                  "isInstantConfirm": true,
+                  "ratePlanCode": "3107333_3730027_2_0-0_NC_0",
+                  "totalPrice": 36.36
+                },
+                {
+                  "adults": 2,
+                  "boardCode": "BB",
+                  "boardCount": 2,
+                  "cancellationPolicies": [
+                    {
+                      "amount": 39.25,
+                      "from": "2026-05-02T00:00:00.000+08:00"
+                    }
+                  ],
+                  "dailyPrices": [
+                    {
+                      "date": "2026-05-02",
+                      "price": 39.25,
+                      "status": 1
+                    }
+                  ],
+                  "isInstantConfirm": true,
+                  "ratePlanCode": "3107333_3537995_2_1-2_1D0P_0",
+                  "totalPrice": 39.25
+                },
+                {
+                  "adults": 2,
+                  "boardCode": "RO",
+                  "boardCount": 0,
+                  "dailyPrices": [
+                    {
+                      "date": "2026-05-02",
+                      "price": 48.53,
+                      "status": 1
+                    }
+                  ],
+                  "isInstantConfirm": true,
+                  "ratePlanCode": "3107333_3730028_2_0-0_NC_0",
+                  "totalPrice": 48.53
+                }
+              ],
+              "roomId": "3107333"
+            }
+          ]
+        }
+      ],
+      "message": "Success"
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 756574583,
+    "headers": {
+      "Connection": [
+        "keep-alive"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Date": [
+        "Thu, 02 Apr 2026 12:37:09 GMT"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ]
+    },
+    "statusCode": 200
+  },
+  "supplier": "Convergent",
+  "timestamp": "2026-04-02T20:37:09.676631+08:00",
+  "url": "http://hapi.huizhi-intl.com/openapi/v3/hotelSearch"
+}

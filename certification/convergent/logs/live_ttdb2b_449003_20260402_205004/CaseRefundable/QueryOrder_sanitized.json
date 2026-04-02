@@ -1,0 +1,69 @@
+{
+  "apiName": "QueryOrder",
+  "curlCommand": "REDACTED",
+  "headers": {
+    "App-Key": "REDACTED",
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "Signature": "REDACTED",
+    "Timestamp": [
+      "1775134204729"
+    ]
+  },
+  "logId": "",
+  "method": "POST",
+  "queryParams": {},
+  "requestBody": {
+    "agentCode": "TTDB2B",
+    "agentOrderId": "AGENT1775134204444083000",
+    "password": "REDACTED",
+    "username": "TTDB2B"
+  },
+  "response": {
+    "body": {
+      "adults": 2,
+      "agentOrderId": "AGENT1775134204444083000",
+      "boardCode": "BB",
+      "boardCount": 2,
+      "cancellationPolicies": [
+        {
+          "amount": 39.25,
+          "from": "2026-05-02T00:00:00.000+08:00"
+        }
+      ],
+      "checkIn": "2026-05-02",
+      "checkOut": "2026-05-03",
+      "code": 200,
+      "currency": "USD  ",
+      "hotelId": 449003,
+      "message": "Success",
+      "orderId": 8825150,
+      "orderStatus": 1,
+      "ratePlanCode": "3107333_3537995_2_1-2_1D0P_0",
+      "roomId": "3107333",
+      "rooms": 1,
+      "totalPrice": 39.25
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 63248083,
+    "headers": {
+      "Connection": [
+        "keep-alive"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Date": [
+        "Thu, 02 Apr 2026 12:50:04 GMT"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ]
+    },
+    "statusCode": 200
+  },
+  "supplier": "Convergent",
+  "timestamp": "2026-04-02T20:50:04.730189+08:00",
+  "url": "http://hapi.huizhi-intl.com/openapi/v3/searchbooking"
+}

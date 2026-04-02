@@ -1,0 +1,95 @@
+{
+  "apiName": "Book",
+  "curlCommand": "REDACTED",
+  "headers": {
+    "App-Key": "REDACTED",
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "Signature": "REDACTED",
+    "Timestamp": [
+      "1775134205237"
+    ]
+  },
+  "logId": "",
+  "method": "POST",
+  "queryParams": {},
+  "requestBody": {
+    "adults": 2,
+    "agentCode": "TTDB2B",
+    "agentOrderId": "AGENT1775134205236930000",
+    "bookingCode": "5aa50073f206473aa8d53a9556460524",
+    "checkIn": "2026-05-02",
+    "checkOut": "2026-05-03",
+    "childrenAges": null,
+    "contactEmail": "tech@hotelbyte.com",
+    "contactName": "Test User",
+    "contactPhone": "+0 13800138000",
+    "currency": "USD",
+    "dailyPrices": [
+      {
+        "date": "2026-05-02",
+        "price": 54.61,
+        "status": 1
+      }
+    ],
+    "guests": [
+      {
+        "firstName": "TestA",
+        "lastName": "Guest",
+        "roomNo": "1"
+      },
+      {
+        "firstName": "TestB",
+        "lastName": "Guest",
+        "roomNo": "1"
+      }
+    ],
+    "hotelId": 449003,
+    "nationality": "CN",
+    "orderRoomDetail": {
+      "bedType": "",
+      "broadCode": "BB",
+      "broadCount": 2,
+      "hotelName": "汇智专属酒店(测试)123123",
+      "ratePlanName": "",
+      "roomName": "商务房（内供）"
+    },
+    "password": "REDACTED",
+    "ratePlanCode": "3107332_3537994_2_1-2_NC_0",
+    "roomId": "3107332",
+    "rooms": 1,
+    "specialRequests": "",
+    "totalPrice": 54.61,
+    "username": "TTDB2B"
+  },
+  "response": {
+    "body": {
+      "agentOrderId": "AGENT1775134205236930000",
+      "code": 200,
+      "message": "Booking has been created successfully",
+      "orderId": 8825151,
+      "orderStatus": 1
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 184024792,
+    "headers": {
+      "Connection": [
+        "keep-alive"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Date": [
+        "Thu, 02 Apr 2026 12:50:05 GMT"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ]
+    },
+    "statusCode": 200
+  },
+  "supplier": "Convergent",
+  "timestamp": "2026-04-02T20:50:05.238345+08:00",
+  "url": "http://hapi.huizhi-intl.com/openapi/v3/booking"
+}
