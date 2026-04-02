@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-04-02T20:45:35+08:00",
+  "credentialId": 25,
+  "credentialName": "TTD Convergent Live",
+  "hotelId": "449003",
+  "outputDir": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_204535",
+  "refundablePick": {
+    "ratePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107333\u003cHB\u003e3107333_3537995_2_1-2_1D0P_0",
+    "checkIn": 20260502,
+    "checkOut": 20260503,
+    "refundableMode": "full",
+    "price": 39.25,
+    "currency": "USD"
+  },
+  "nonRefundablePick": {
+    "ratePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107332\u003cHB\u003e3107332_3537994_2_1-2_NC_0",
+    "checkIn": 20260502,
+    "checkOut": 20260503,
+    "refundableMode": "no",
+    "price": 54.61,
+    "currency": "USD"
+  },
+  "cases": [
+    {
+      "caseName": "CaseRefundable",
+      "wantedMode": "full",
+      "selectedRatePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107333\u003cHB\u003e3107333_3537995_2_1-2_1D0P_0",
+      "selectedRateMode": "full",
+      "checkIn": 20260502,
+      "checkOut": 20260503,
+      "cancelAttempted": false,
+      "cancelSucceeded": false,
+      "bookingError": "Book failed: ErrorCode=[100000404] Message=[order not found by PlatformReferenceNo: -1775133937]",
+      "logFiles": {
+        "Book": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_204535/CaseRefundable/Book_sanitized.json",
+        "CheckAvail": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_204535/CaseRefundable/CheckAvail_sanitized.json",
+        "HotelRates": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_204535/CaseRefundable/HotelRates_sanitized.json"
+      }
+    },
+    {
+      "caseName": "CaseNonRefundable",
+      "wantedMode": "no",
+      "selectedRatePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107332\u003cHB\u003e3107332_3537994_2_1-2_NC_0",
+      "selectedRateMode": "no",
+      "checkIn": 20260502,
+      "checkOut": 20260503,
+      "cancelAttempted": false,
+      "cancelSucceeded": false,
+      "bookingError": "Book failed: ErrorCode=[100000404] Message=[order not found by PlatformReferenceNo: -1775133954]",
+      "logFiles": {
+        "Book": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_204535/CaseNonRefundable/Book_sanitized.json",
+        "CheckAvail": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_204535/CaseNonRefundable/CheckAvail_sanitized.json",
+        "HotelRates": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_204535/CaseNonRefundable/HotelRates_sanitized.json"
+      }
+    }
+  ]
+}

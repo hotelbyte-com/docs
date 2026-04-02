@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-02T20:37:09+08:00",
+  "credentialId": 25,
+  "credentialName": "TTD Convergent Live",
+  "hotelId": "449003",
+  "outputDir": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_203709",
+  "refundablePick": {
+    "ratePkgId": "Convergent\u003cHB\u003e449003\u003cHB\u003e3107333\u003cHB\u003e3107333_3537995_2_1-2_1D0P_0",
+    "checkIn": 20260502,
+    "checkOut": 20260503,
+    "refundableMode": "full",
+    "price": 39.25,
+    "currency": "USD"
+  },
+  "nonRefundablePick": {
+    "ratePkgId": "Convergent\u003cHB\u003e449003\u003cHB\u003e3107332\u003cHB\u003e3107332_3537994_2_1-2_NC_0",
+    "checkIn": 20260502,
+    "checkOut": 20260503,
+    "refundableMode": "no",
+    "price": 54.61,
+    "currency": "USD"
+  },
+  "cases": [
+    {
+      "caseName": "CaseRefundable",
+      "wantedMode": "full",
+      "selectedRatePkgId": "Convergent\u003cHB\u003e449003\u003cHB\u003e3107333\u003cHB\u003e3107333_3537995_2_1-2_1D0P_0",
+      "selectedRateMode": "full",
+      "checkIn": 20260502,
+      "checkOut": 20260503,
+      "cancelAttempted": false,
+      "cancelSucceeded": false,
+      "bookingError": "Book failed: failed to build book request: missing bookingCode from check avail session",
+      "logFiles": {
+        "CheckAvail": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_203709/CaseRefundable/CheckAvail_sanitized.json",
+        "HotelRates": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_203709/CaseRefundable/HotelRates_sanitized.json"
+      }
+    },
+    {
+      "caseName": "CaseNonRefundable",
+      "wantedMode": "no",
+      "selectedRatePkgId": "Convergent\u003cHB\u003e449003\u003cHB\u003e3107332\u003cHB\u003e3107332_3537994_2_1-2_NC_0",
+      "selectedRateMode": "no",
+      "checkIn": 20260502,
+      "checkOut": 20260503,
+      "cancelAttempted": false,
+      "cancelSucceeded": false,
+      "bookingError": "Book failed: failed to build book request: missing bookingCode from check avail session",
+      "logFiles": {
+        "CheckAvail": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_203709/CaseNonRefundable/CheckAvail_sanitized.json",
+        "HotelRates": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_203709/CaseNonRefundable/HotelRates_sanitized.json"
+      }
+    }
+  ]
+}
