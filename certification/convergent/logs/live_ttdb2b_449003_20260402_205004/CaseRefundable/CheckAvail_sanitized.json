@@ -1,0 +1,93 @@
+{
+  "apiName": "CheckAvail",
+  "curlCommand": "REDACTED",
+  "headers": {
+    "App-Key": "REDACTED",
+    "Content-Type": [
+      "application/json; charset=utf-8"
+    ],
+    "Signature": "REDACTED",
+    "Timestamp": [
+      "1775134204346"
+    ]
+  },
+  "logId": "",
+  "method": "POST",
+  "queryParams": {},
+  "requestBody": {
+    "adults": 2,
+    "agentCode": "TTDB2B",
+    "checkIn": "2026-05-02",
+    "checkOut": "2026-05-03",
+    "hotelId": 449003,
+    "nationality": "CN",
+    "password": "REDACTED",
+    "ratePlanCode": "3107333_3537995_2_1-2_1D0P_0",
+    "roomId": "3107333",
+    "rooms": 1,
+    "username": "TTDB2B"
+  },
+  "response": {
+    "body": {
+      "bookingCode": "cb88fbfb6abf43dd82777e1d342c288d",
+      "checkIn": "2026-05-02",
+      "checkOut": "2026-05-03",
+      "code": 200,
+      "currency": "USD",
+      "hotel": {
+        "hotelId": 449003,
+        "isFrontDesk": 0,
+        "name": "汇智专属酒店(测试)123123",
+        "nameEn": "Online test123123",
+        "room": {
+          "name": "标间（内供）",
+          "nameEn": "Standard Room",
+          "rate": {
+            "adults": 2,
+            "boardCode": "BB",
+            "boardCount": 2,
+            "cancellationPolicies": [
+              {
+                "amount": 39.25,
+                "from": "2026-05-02T00:00:00.000+08:00"
+              }
+            ],
+            "dailyPrices": [
+              {
+                "date": "2026-05-02",
+                "price": 39.25,
+                "status": 1
+              }
+            ],
+            "isInstantConfirm": true,
+            "ratePlanCode": "3107333_3537995_2_1-2_1D0P_0",
+            "taxDescription": "不包含外国游客旅游税，由酒店收取每晚10林吉特,以酒店收取为准",
+            "totalPrice": 39.25
+          },
+          "roomId": "3107333"
+        }
+      },
+      "message": "Success"
+    },
+    "contentType": "application/json; charset=utf-8",
+    "duration": 92489958,
+    "headers": {
+      "Connection": [
+        "keep-alive"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Date": [
+        "Thu, 02 Apr 2026 12:50:04 GMT"
+      ],
+      "Vary": [
+        "Accept-Encoding"
+      ]
+    },
+    "statusCode": 200
+  },
+  "supplier": "Convergent",
+  "timestamp": "2026-04-02T20:50:04.347059+08:00",
+  "url": "http://hapi.huizhi-intl.com/openapi/v3/precheck"
+}
