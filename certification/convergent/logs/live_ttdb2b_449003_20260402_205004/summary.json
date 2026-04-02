@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-04-02T20:50:04+08:00",
+  "credentialId": 25,
+  "credentialName": "TTD Convergent Live",
+  "hotelId": "449003",
+  "outputDir": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004",
+  "refundablePick": {
+    "ratePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107333\u003cHB\u003e3107333_3537995_2_1-2_1D0P_0",
+    "checkIn": 20260502,
+    "checkOut": 20260503,
+    "refundableMode": "full",
+    "price": 39.25,
+    "currency": "USD"
+  },
+  "nonRefundablePick": {
+    "ratePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107332\u003cHB\u003e3107332_3537994_2_1-2_NC_0",
+    "checkIn": 20260502,
+    "checkOut": 20260503,
+    "refundableMode": "no",
+    "price": 54.61,
+    "currency": "USD"
+  },
+  "cases": [
+    {
+      "caseName": "CaseRefundable",
+      "wantedMode": "full",
+      "selectedRatePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107333\u003cHB\u003e3107333_3537995_2_1-2_1D0P_0",
+      "selectedRateMode": "full",
+      "checkIn": 20260502,
+      "checkOut": 20260503,
+      "supplierReferenceNo": "AGENT1775134204444083000",
+      "cancelAttempted": true,
+      "cancelSucceeded": true,
+      "logFiles": {
+        "Book": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseRefundable/Book_sanitized.json",
+        "Cancel": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseRefundable/Cancel_sanitized.json",
+        "CheckAvail": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseRefundable/CheckAvail_sanitized.json",
+        "HotelRates": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseRefundable/HotelRates_sanitized.json",
+        "QueryOrder": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseRefundable/QueryOrder_sanitized.json"
+      }
+    },
+    {
+      "caseName": "CaseNonRefundable",
+      "wantedMode": "no",
+      "selectedRatePkgId": "24\u003cHB\u003e25\u003cHB\u003eConvergent\u003cHB\u003e449003\u003cHB\u003e3107332\u003cHB\u003e3107332_3537994_2_1-2_NC_0",
+      "selectedRateMode": "no",
+      "checkIn": 20260502,
+      "checkOut": 20260503,
+      "supplierReferenceNo": "AGENT1775134205236930000",
+      "cancelAttempted": true,
+      "cancelSucceeded": false,
+      "cancelError": "failed to execute cancel request: ErrorCode=[100001004] Message=[1006:The order cannot be cancelled]",
+      "logFiles": {
+        "Book": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseNonRefundable/Book_sanitized.json",
+        "Cancel": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseNonRefundable/Cancel_sanitized.json",
+        "CheckAvail": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseNonRefundable/CheckAvail_sanitized.json",
+        "HotelRates": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseNonRefundable/HotelRates_sanitized.json",
+        "QueryOrder": "/Users/bytedance/work/hotel-be/docs/public/certification/convergent/logs/live_ttdb2b_449003_20260402_205004/CaseNonRefundable/QueryOrder_sanitized.json"
+      }
+    }
+  ]
+}
