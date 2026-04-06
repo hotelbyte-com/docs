@@ -175,7 +175,7 @@ Seller: 10000000036 (HeyTrip)
   - ClientID: 89EKLNV67ST4IJHVS98406H6QJ2HV5RW
   - APIKey: dJBK38Y(HjKa3c8w73ved_A2GAzvxQSD)DF3
 
-- 凭证21: "TTD HeyTrip Live (Pending Certification)" (ONLINE模式)
+- 凭证21: "TTD HeyTrip Live" (ONLINE模式)
   - 货币: USD
   - Mode: ONLINE
 
