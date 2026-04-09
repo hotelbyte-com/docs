@@ -1,0 +1,12 @@
+{
+  "request": {
+    "supplierReferenceNo": "B04264V6AQ",
+    "platformReferenceNo": "",
+    "cancelType": 0,
+    "cancelReason": "Production test cleanup - Issue #52"
+  },
+  "response": {
+    "status": 3,
+    "cancelReferenceNo": ""
+  }
+}

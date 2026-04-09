@@ -1,0 +1,30 @@
+{
+  "request": {
+    "supplierHotelId": "77827",
+    "checkIn": "2026-04-28",
+    "checkOut": "2026-04-29",
+    "countryCode": "US",
+    "residencyCode": "US",
+    "nationalityCode": "US",
+    "roomOccupancies": [
+      {
+        "adultCount": 1,
+        "childrenAges": []
+      },
+      {
+        "adultCount": 2,
+        "childrenAges": []
+      }
+    ],
+    "destinationName": "",
+    "supplierDestinationId": "",
+    "currency": "USD"
+  },
+  "response": {
+    "supplierCredential": {
+      "supplier": 0,
+      "id": ""
+    },
+    "rooms": null
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "request": {
+    "supplier": 0,
+    "platformReferenceNos": null,
+    "supplierReferenceNos": [
+      "B04264V6AQ"
+    ]
+  },
+  "response": {
+    "orders": [
+      {
+        "status": 2,
+        "statusRemark": "",
+        "checkIn": "2026-04-28",
+        "checkOut": "2026-04-29",
+        "holder": {
+          "firstName": "Test",
+          "lastName": "Adult"
+        },
+        "platformReferenceNo": "1775753194835830742",
+        "netRate": {
+          "currency": "USD",
+          "amount": 12205.96
+        },
+        "sourceRate": {},
+        "supplier": 20,
+        "supplierReferenceNo": "B04264V6AQ",
+        "hotel": {
+          "supplierHotelId": "305592",
+          "hotelId": ""
+        },
+        "rooms": [
+          {
+            "roomIndex": 0,
+            "guests": [
+              {
+                "roomIndex": 0,
+                "firstName": "Test",
+                "lastName": "Adult",
+                "nationalityCode": ""
+              },
+              {
+                "roomIndex": 0,
+                "firstName": "Test",
+                "lastName": "Adult",
+                "nationalityCode": ""
+              },
+              {
+                "roomIndex": 0,
+                "firstName": "Test",
+                "lastName": "Adult",
+                "nationalityCode": ""
+              }
+            ],
+            "refundInfo": []
+          }
+        ]
+      }
+    ]
+  }
+}
