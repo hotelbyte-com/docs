@@ -1,0 +1,15 @@
+{
+  "checkIn": "2026-04-28",
+  "checkOut": "2026-04-29",
+  "currency": "",
+  "hotelID": "305592",
+  "issue": "GitHub Issue #52",
+  "note": "Booking was cancelled after testing",
+  "platformRef": "1775753194835830742",
+  "price": 0,
+  "ratePkgId": "LCL.10000040:0",
+  "status": "Completed",
+  "supplierRef": "B04264V6AQ",
+  "testDate": "2026-04-09 16:46:36",
+  "testType": "Production"
+}

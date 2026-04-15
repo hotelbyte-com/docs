@@ -1,0 +1,165 @@
+{
+  "request": {
+    "supplierHotelId": "305592",
+    "checkIn": "2026-04-28",
+    "checkOut": "2026-04-29",
+    "countryCode": "US",
+    "residencyCode": "US",
+    "nationalityCode": "US",
+    "roomOccupancies": [
+      {
+        "adultCount": 1,
+        "childrenAges": []
+      },
+      {
+        "adultCount": 2,
+        "childrenAges": []
+      }
+    ],
+    "destinationName": "",
+    "supplierDestinationId": "",
+    "currency": "USD"
+  },
+  "response": {
+    "supplierCredential": {
+      "supplier": 0,
+      "id": ""
+    },
+    "rooms": [
+      {
+        "roomTypeId": "RO",
+        "roomTypeName": {
+          "en": "Estate Suite Room"
+        },
+        "supplierHotelId": "305592",
+        "profile": {
+          "occupancy": 1,
+          "roomIndex": 0
+        },
+        "rates": [
+          {
+            "ratePkgId": "LCL.10000040:0",
+            "refundableMode": "full",
+            "cancelFees": [
+              {
+                "until": "2026-04-26T00:00:00Z"
+              },
+              {
+                "until": "2026-04-29T00:00:00Z",
+                "fee": {
+                  "currency": "USD",
+                  "amount": 12205.96
+                }
+              }
+            ],
+            "totalRate": {
+              "netRate": {
+                "currency": "USD",
+                "amount": 6102.98
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 6102.98
+              }
+            },
+            "rateInBusinessCurrency": {},
+            "totalRateInBusinessCurrency": {},
+            "available": true,
+            "sessionParams": {
+              "netstorming:agreement": "LCL.10000040",
+              "netstorming:number": "12392737",
+              "netstorming:occupancy": 1,
+              "netstorming:price": "6102.980000",
+              "netstorming:roomType": "tsu",
+              "roomIndex": 0
+            },
+            "ratePlanId": "LCL.10000040",
+            "board": {
+              "boardId": "RO",
+              "boardName": {
+                "en": "RO"
+              }
+            },
+            "inventory": 1,
+            "dailyRates": [
+              {
+                "date": "2026-04-28",
+                "netRate": {
+                  "currency": "USD",
+                  "amount": 6102.98
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "roomTypeId": "RO",
+        "roomTypeName": {
+          "en": "Estate Suite Room"
+        },
+        "supplierHotelId": "305592",
+        "profile": {
+          "occupancy": 2,
+          "roomIndex": 1
+        },
+        "rates": [
+          {
+            "ratePkgId": "LCL.10000040:1",
+            "refundableMode": "full",
+            "cancelFees": [
+              {
+                "until": "2026-04-26T00:00:00Z"
+              },
+              {
+                "until": "2026-04-29T00:00:00Z",
+                "fee": {
+                  "currency": "USD",
+                  "amount": 12205.96
+                }
+              }
+            ],
+            "totalRate": {
+              "netRate": {
+                "currency": "USD",
+                "amount": 6102.98
+              },
+              "grossRate": {
+                "currency": "USD",
+                "amount": 6102.98
+              }
+            },
+            "rateInBusinessCurrency": {},
+            "totalRateInBusinessCurrency": {},
+            "available": true,
+            "sessionParams": {
+              "netstorming:agreement": "LCL.10000040",
+              "netstorming:number": "12392737",
+              "netstorming:occupancy": 2,
+              "netstorming:price": "6102.980000",
+              "netstorming:roomType": "dbl",
+              "roomIndex": 1
+            },
+            "ratePlanId": "LCL.10000040",
+            "board": {
+              "boardId": "RO",
+              "boardName": {
+                "en": "RO"
+              }
+            },
+            "inventory": 1,
+            "dailyRates": [
+              {
+                "date": "2026-04-28",
+                "netRate": {
+                  "currency": "USD",
+                  "amount": 6102.98
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "request": {
+    "ratePkgId": "LCL.10000040:0",
+    "holder": {
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "test@hotelbyte.com"
+    },
+    "guests": [
+      {
+        "roomIndex": 1,
+        "firstName": "Test",
+        "lastName": "Adult1",
+        "nationalityCode": "",
+        "age": 30
+      },
+      {
+        "roomIndex": 2,
+        "firstName": "Test",
+        "lastName": "Adult2",
+        "nationalityCode": "",
+        "age": 30
+      },
+      {
+        "roomIndex": 2,
+        "firstName": "Test",
+        "lastName": "Adult3",
+        "nationalityCode": "",
+        "age": 30
+      }
+    ],
+    "payment": {},
+    "platformReferenceNo": "1775753194835830742",
+    "currency": "USD",
+    "test": ""
+  },
+  "response": {
+    "hotelOrder": {
+      "status": 2,
+      "statusRemark": "",
+      "sourceRate": {},
+      "supplier": 20,
+      "supplierReferenceNo": "B04264V6AQ"
+    }
+  }
+}

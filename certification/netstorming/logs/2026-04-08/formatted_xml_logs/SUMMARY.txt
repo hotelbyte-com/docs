@@ -1,0 +1,55 @@
+====================================================================
+Netstorming Certification Test - Executive Summary
+====================================================================
+Test Date: 2026-04-08 14:36:09
+Environment: TEST (https://test.netstorming.net/kalima/call.php)
+
+Required Test Scenarios:
+  1. 1 SGL room for 1 night
+  2. 1 DBL room for 3 nights
+  3. 1 SGL + 1 DBL for 2 nights (SKIPPED - not supported by test hotel)
+  4. 1 DBL room + 1 child (5 years old) ✅ FIXED
+  5. 1 DBL with extra bed + 1 TRP with cot (SKIPPED - not supported)
+
+Test Results:
+------------------------------------------------------------------------
+Scenario 1: Single Room (1 Adult, 1 Night)
+  Hotel: THE CODE HOTEL (305592)
+  Check-in: 2026-05-08, Check-out: 2026-05-09
+  Booking Reference: B0426N8WM1
+  Status: ✅ PASS (5/5 steps)
+
+Scenario 2: Double Room (2 Adults, 3 Nights)
+  Hotel: THE CODE HOTEL (305592)
+  Check-in: 2026-05-10, Check-out: 2026-05-13
+  Booking Reference: B0426X7FT0
+  Status: ✅ PASS (5/5 steps)
+
+Scenario 4: Double Room with Child (2 Adults + 1 Child Age 5, 2 Nights)
+  Hotel: THE CODE HOTEL (305592)
+  Check-in: 2026-05-18, Check-out: 2026-05-20
+  Booking Reference: B0426AN1BX
+  Status: ✅ PASS (5/5 steps)
+
+Overall Success Rate: 3/5 scenarios (60%)
+
+API Flow for Each Scenario:
+  1. HotelRates (Availability Search)
+  2. CheckAvail (Evaluate / Prebook) - Returns search number
+  3. Book - Uses search number from Evaluate
+  4. QueryOrder (Track) - Verifies booking status
+  5. Cancel - Cleans up test booking
+
+All XML request/response logs are included in the scenario files.
+
+FIX APPLIED:
+----------
+Fixed occupancy calculation in genRoomDetail() function.
+Previously: occupancy = adult_count + child_count
+Now: occupancy = adult_count only (as per Netstorming API spec)
+
+Children are now correctly specified using:
+  - extrabed="true"
+  -age="5" (for 5-year-old child)
+
+====================================================================
