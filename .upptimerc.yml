@@ -1,0 +1,136 @@
+# Upptime 配置
+# 仓库：hotelbyte-com/docs
+# 状态页地址：https://status.hotelbyte.com
+
+owner: hotelbyte-com
+repo: docs
+
+sites:
+  - name: Stays API
+    url: https://api.hotelbyte.com/health
+    headers:
+      - "User-Agent: UpptimeBot/1.0"
+    expectedStatusCodes:
+      - 200
+
+  - name: Search Endpoint
+    url: https://api.hotelbyte.com/health/search
+    headers:
+      - "User-Agent: UpptimeBot/1.0"
+    expectedStatusCodes:
+      - 200
+
+  - name: Rate Comparison
+    url: https://api.hotelbyte.com/health/rates
+    headers:
+      - "User-Agent: UpptimeBot/1.0"
+    expectedStatusCodes:
+      - 200
+
+  - name: Auth Service
+    url: https://api.hotelbyte.com/health/auth
+    headers:
+      - "User-Agent: UpptimeBot/1.0"
+    expectedStatusCodes:
+      - 200
+
+  - name: Webhook Delivery
+    url: https://api.hotelbyte.com/health/webhook
+    headers:
+      - "User-Agent: UpptimeBot/1.0"
+    expectedStatusCodes:
+      - 200
+
+status-website:
+  theme: light
+  cname: status.hotelbyte.com
+  logoUrl: https://hotelbyte.com/logo.svg
+  name: HotelByte Status
+  introTitle: "**HotelByte** System Status"
+  introMessage: Real-time operational status of HotelByte APIs and services. This page is automatically updated every 5 minutes.
+  navbar:
+    - title: HotelByte
+      href: https://hotelbyte.com
+    - title: API Docs
+      href: https://openapi.hotelbyte.com
+    - title: Blog
+      href: https://blog.hotelbyte.com
+
+  css: |
+    :root {
+      --primary-color: #0A2540;
+      --accent-color: #00D4AA;
+      --success-color: #00D4AA;
+      --warning-color: #F5A623;
+      --danger-color: #E25950;
+      --body-background-color: #F6F9FC;
+      --card-background-color: #FFFFFF;
+      --nav-background-color: #0A2540;
+      --nav-border-bottom-color: #0A2540;
+      --nav-current-border-bottom-color: #00D4AA;
+      --nav-text-color: #FFFFFF;
+      --tag-up-color: #00D4AA;
+      --tag-down-color: #E25950;
+      --tag-degraded-color: #F5A623;
+    }
+    nav {
+      background-color: #0A2540 !important;
+    }
+    nav a {
+      color: #FFFFFF !important;
+    }
+    .logo {
+      filter: brightness(0) invert(1);
+    }
+    article.up {
+      border-left-color: #00D4AA !important;
+    }
+    article.down {
+      border-left-color: #E25950 !important;
+    }
+    article.degraded {
+      border-left-color: #F5A623 !important;
+    }
+
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "0 3 * * *"
+  uptime: "*/5 * * * *"
+
+i18n:
+  activeIncidents: Active Incidents
+  allSystemsOperational: All Systems Operational
+  degradedPerformance: Degraded Performance
+  completeOutage: Complete Outage
+  partialOutage: Partial Outage
+  activeIncidentSummary: Opened at $DATE with post $POSTS
+  incidentTitle: Incident $NUMBER Details
+  incidentDetails: Incident Details
+  incidentFixed: Fixed
+  incidentOngoing: Ongoing
+  incidentOpenedAt: Opened at
+  incidentClosedAt: Closed at
+  incidentViewOnGitHub: View on GitHub
+  incidentCommentSummary: Posted at $DATE
+  incidentBack: Back to all incidents
+  pastIncidents: Past Incidents
+  pastIncidentsResolved: Resolved in $MINUTES minutes with $POSTS
+  liveStatus: Live Status
+  overallUptime: Overall uptime
+  overallUptimeTitle: Overall uptime
+  averageResponseTime: Average response time
+  averageResponseTimeTitle: Average response time
+  sevelDayResponseTime: 7-day response time
+  responseTimeMs: Response time (ms)
+  loading: Loading
+  navGitHub: GitHub
+  footer: This page is [open source]($REPO), powered by [Upptime](https://upptime.js.org/)
+  rateLimitExceededTitle: Rate limit exceeded
+  rateLimitExceededIntro: You have exceeded the number of requests allowed in an hour. Please try again in a bit.
+  rateLimitExceededWhat: What can I do?
+  rateLimitExceededError: If you have an application that uses this API, please wait a bit before making more requests, or slow down in the future.
+  rateLimitExceededComeBack: You can also come back in an hour when your limit resets.
