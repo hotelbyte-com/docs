@@ -1,7 +1,7 @@
 url: https://api.hotelbyte.com/health
-status: down
-code: 502
-responseTime: 200
-lastUpdated: 2026-04-27T16:07:57.409Z
+status: up
+code: 200
+responseTime: 203
+lastUpdated: 2026-04-27T16:57:45.752Z
 startTime: 2026-04-26T19:58:40.923Z
 generator: Upptime <https://github.com/upptime/upptime>
