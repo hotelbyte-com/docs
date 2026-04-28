@@ -1,7 +1,7 @@
 url: https://api.hotelbyte.com/health/rates
-status: down
-code: 503
-responseTime: 38
-lastUpdated: 2026-04-28T00:05:34.143Z
+status: up
+code: 200
+responseTime: 55
+lastUpdated: 2026-04-28T04:00:34.032Z
 startTime: 2026-04-26T19:58:43.855Z
 generator: Upptime <https://github.com/upptime/upptime>
