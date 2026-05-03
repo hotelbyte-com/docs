@@ -1,7 +1,7 @@
 url: https://api.hotelbyte.com/health/webhook
-status: up
-code: 200
-responseTime: 75
-lastUpdated: 2026-05-02T23:36:22.203Z
+status: down
+code: 502
+responseTime: 45
+lastUpdated: 2026-05-03T19:12:18.244Z
 startTime: 2026-04-26T19:58:48.314Z
 generator: Upptime <https://github.com/upptime/upptime>
