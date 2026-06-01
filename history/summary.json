@@ -4,19 +4,19 @@
     "url": "https://api.hotelbyte.com/health",
     "icon": "https://icons.duckduckgo.com/ip3/api.hotelbyte.com.ico",
     "slug": "stays-api",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 214,
-    "timeDay": 166,
-    "timeWeek": 202,
-    "timeMonth": 215,
-    "timeYear": 214,
+    "status": "up",
+    "uptime": "99.62%",
+    "uptimeDay": "86.52%",
+    "uptimeWeek": "98.07%",
+    "uptimeMonth": "99.56%",
+    "uptimeYear": "99.62%",
+    "time": 213,
+    "timeDay": 167,
+    "timeWeek": 198,
+    "timeMonth": 213,
+    "timeYear": 213,
     "dailyMinutesDown": {
-      "2026-06-01": 0
+      "2026-06-01": 194
     }
   },
   {
@@ -24,19 +24,19 @@
     "url": "https://api.hotelbyte.com/health/search",
     "icon": "https://icons.duckduckgo.com/ip3/api.hotelbyte.com.ico",
     "slug": "search-endpoint",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.62%",
+    "uptimeDay": "86.52%",
+    "uptimeWeek": "98.07%",
+    "uptimeMonth": "99.56%",
+    "uptimeYear": "99.62%",
     "time": 47,
-    "timeDay": 33,
+    "timeDay": 35,
     "timeWeek": 38,
     "timeMonth": 44,
     "timeYear": 47,
     "dailyMinutesDown": {
-      "2026-06-01": 0
+      "2026-06-01": 194
     }
   },
   {
@@ -44,19 +44,19 @@
     "url": "https://api.hotelbyte.com/health/rates",
     "icon": "https://icons.duckduckgo.com/ip3/api.hotelbyte.com.ico",
     "slug": "rate-comparison",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.62%",
+    "uptimeDay": "86.52%",
+    "uptimeWeek": "98.07%",
+    "uptimeMonth": "99.56%",
+    "uptimeYear": "99.62%",
     "time": 47,
-    "timeDay": 33,
-    "timeWeek": 37,
+    "timeDay": 35,
+    "timeWeek": 38,
     "timeMonth": 44,
     "timeYear": 47,
     "dailyMinutesDown": {
-      "2026-06-01": 0
+      "2026-06-01": 194
     }
   },
   {
@@ -64,19 +64,19 @@
     "url": "https://api.hotelbyte.com/health/auth",
     "icon": "https://icons.duckduckgo.com/ip3/api.hotelbyte.com.ico",
     "slug": "auth-service",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 46,
-    "timeDay": 32,
+    "status": "up",
+    "uptime": "99.62%",
+    "uptimeDay": "86.52%",
+    "uptimeWeek": "98.07%",
+    "uptimeMonth": "99.56%",
+    "uptimeYear": "99.62%",
+    "time": 45,
+    "timeDay": 35,
     "timeWeek": 41,
     "timeMonth": 46,
-    "timeYear": 46,
+    "timeYear": 45,
     "dailyMinutesDown": {
-      "2026-06-01": 0
+      "2026-06-01": 194
     }
   },
   {
@@ -84,17 +84,19 @@
     "url": "https://api.hotelbyte.com/health/webhook",
     "icon": "https://icons.duckduckgo.com/ip3/api.hotelbyte.com.ico",
     "slug": "webhook-delivery",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.62%",
+    "uptimeDay": "86.52%",
+    "uptimeWeek": "98.07%",
+    "uptimeMonth": "99.56%",
+    "uptimeYear": "99.62%",
     "time": 52,
-    "timeDay": 34,
+    "timeDay": 37,
     "timeWeek": 43,
     "timeMonth": 53,
     "timeYear": 52,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-06-01": 194
+    }
   }
 ]
